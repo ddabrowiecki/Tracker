@@ -16,4 +16,5 @@ def get_quote_close():
     quote = r.json()
     return quote['Global Quote']['05. price']
 
-append_price([[TODAY_DATE, get_quote_close()]])
+# append_price([[TODAY_DATE, get_quote_close()]])
+print(get_quote_close())
