@@ -1,9 +1,10 @@
 import requests
 import json
+import os
 from google_api import append_price
 import datetime
 
-f = open('C:/Users/Dom/priv_info.json')
+f = os.environ.get('AVI_KEY')
 priv = json.load(f)
 key = priv["key"]
 
