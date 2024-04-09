@@ -1,4 +1,3 @@
-import pandas as pd 
 import requests
 import json
 from google_api import append_price
