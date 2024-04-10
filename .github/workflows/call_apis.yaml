@@ -7,10 +7,19 @@ on:
 
 jobs:
   build:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: ${{ secrets.GOOGLE_API_KEY }}
+    #     workload_identity_provider: "projects/169411888623/locations/global/workloadIdentityPools/github-tracker/providers/github"
+    #     service-account: "domcronjob@redtracker-418718.iam.gserviceaccount.com"
     - name: Setup python
       uses: actions/setup-python@v5
       with: 
@@ -22,5 +31,4 @@ jobs:
     - name: call av api
       env:
         AV_KEY: ${{ secrets.AV_API_KEY }}
-        GOOGLE_KEY: ${{ secrets.GOOGLE_API_KEY }}
       run: python av_api.py
