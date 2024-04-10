@@ -12,13 +12,13 @@ RANGE = 'Tracker!A2:B2'
 
 # KEY = os.environ["GOOGLE_KEY"]
 # print(type(KEY))
-print(os.environ)
+print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = service_account.Credentials.from_service_account_file(os.environ["GOOGLE_KEY"], SCOPES)
+    credentials = service_account.Credentials.from_service_account_file(os.environ["GOOGLE_APPLICATION_CREDENTIALS"], SCOPES)
     append_body = {
         "values": values,
         "range": RANGE,
