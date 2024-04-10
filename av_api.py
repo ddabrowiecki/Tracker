@@ -4,7 +4,7 @@ import os
 from google_api import append_price
 import datetime
 
-key = os.environ['AVI_API_KEY']
+key = os.environ['AV_API_KEY']
 print(key)
 
 TODAY_DATE = datetime.datetime.now().strftime("%x")
