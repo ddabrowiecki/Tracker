@@ -17,7 +17,7 @@ jobs:
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v2'
       with:
-        credentials_json: ${{ secrets.GOOGLE_API_KEY }}
+        GOOGLE_KEY: ${{ secrets.GOOGLE_API_KEY }}
     #     workload_identity_provider: "projects/169411888623/locations/global/workloadIdentityPools/github-tracker/providers/github"
     #     service-account: "domcronjob@redtracker-418718.iam.gserviceaccount.com"
     - name: Setup python
