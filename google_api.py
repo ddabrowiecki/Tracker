@@ -10,7 +10,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
-KEY = os.environ.get('GOOGLE_KEY')
+KEY = os.environ["GOOGLE_KEY"]
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
