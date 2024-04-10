@@ -12,6 +12,7 @@ RANGE = 'Tracker!A2:B2'
 
 # KEY = os.environ["GOOGLE_KEY"]
 # print(type(KEY))
+print(os.environ)
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
