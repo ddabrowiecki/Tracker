@@ -11,7 +11,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
-f = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
+f = open(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 key = json.loads(f)
 print(key)
 
