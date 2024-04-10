@@ -12,6 +12,7 @@ SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
 f = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
+print(f)
 # key = json.load(f)
 # print(key)
 
