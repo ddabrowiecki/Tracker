@@ -11,7 +11,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
-key = open(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
+key = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
