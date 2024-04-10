@@ -13,6 +13,7 @@ RANGE = 'Tracker!A2:B2'
 
 f = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
 key = json.loads(f)
+print(key)
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
