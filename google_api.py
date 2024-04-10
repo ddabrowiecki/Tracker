@@ -11,14 +11,13 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
-f = open(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
-KEY = json.load(f)
+key = open(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = service_account.Credentials.from_service_account_file(KEY)
+    credentials = service_account.Credentials.from_service_account_file(key)
     append_body = {
         "values": values,
         "range": RANGE,
