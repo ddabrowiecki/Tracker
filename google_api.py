@@ -11,6 +11,7 @@ SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
 KEY = os.environ["GOOGLE_KEY"]
+print(type(KEY))
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
