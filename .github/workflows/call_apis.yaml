@@ -22,4 +22,5 @@ jobs:
     - name: call av api
       env:
         AV_KEY: ${{ secrets.AV_API_KEY }}
+        GOOGLE_KEY: ${{ secrets.GOOGLE_API_KEY }}
       run: python av_api.py
