@@ -19,7 +19,7 @@ def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = service_account.Credentials.from_service_account_file(json_acct_info)
+    credentials = service_account.Credentials.from_service_account_info(json_acct_info)
     append_body = {
         "values": values,
         "range": RANGE,
