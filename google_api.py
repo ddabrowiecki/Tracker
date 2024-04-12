@@ -13,10 +13,9 @@ SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
 f = os.environ["GOOGLE_GHA_CREDS_PATH"]
-# key = open(f)
-# print(contents)
-key = json.load(f)
-# print(key)
+opened_json = open(f)
+key = json.load(opened_json)
+print(key)
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
