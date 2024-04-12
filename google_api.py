@@ -13,7 +13,7 @@ SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
 f = os.environ["GOOGLE_GHA_CREDS_PATH"]
-print(f)
+print(open(f))
 # key = json.load(f)
 # print(key)
 
