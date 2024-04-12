@@ -4,7 +4,8 @@ import json
 import os
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from google.oauth2 import service_account
+# from google.oauth2 import service_account
+from google.auth.identity_pool import Credentials
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
@@ -21,7 +22,7 @@ def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = identity_pool.Credentials.from_info(key)
+    credentials = Credentials.from_info(key)
     append_body = {
         "values": values,
         "range": RANGE,
