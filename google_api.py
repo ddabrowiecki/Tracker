@@ -15,7 +15,7 @@ RANGE = 'Tracker!A2:B2'
 f = os.environ["GOOGLE_GHA_CREDS_PATH"]
 # key = open(f)
 # print(contents)
-key = json.loads(f)
+key = json.load(f)
 # print(key)
 
 def append_price(values, value_input_option="USER_ENTERED"):
