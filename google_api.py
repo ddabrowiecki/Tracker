@@ -12,8 +12,8 @@ SPREADSHEET_ID = '1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ'
 RANGE = 'Tracker!A2:B2'
 
 f = os.environ["GOOGLE_GHA_CREDS_PATH"]
-contents = open(f).read()
-print(contents)
+key = open(f)
+# print(contents)
 # key = json.load(f)
 # print(key)
 
@@ -21,7 +21,7 @@ def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = service_account.Credentials.from_service_account_file(f)
+    credentials = identity_pool.Credentials.from_info(key)
     append_body = {
         "values": values,
         "range": RANGE,
