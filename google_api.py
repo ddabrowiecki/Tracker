@@ -21,8 +21,7 @@ def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    # credentials = service_account.Credentials.from_service_account_file(f)
-    credentials = creds
+    credentials = service_account.Credentials.from_service_account_file(f)
     append_body = {
         "values": values,
         "range": RANGE,
