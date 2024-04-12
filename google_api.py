@@ -15,13 +15,12 @@ RANGE = 'Tracker!A2:B2'
 f = os.environ["GOOGLE_GHA_CREDS_PATH"]
 opened_json = open(f)
 key = json.load(opened_json)
-print(key)
 
 def append_price(values, value_input_option="USER_ENTERED"):
     """
     Add price to spreadsheet
     """
-    credentials = Credentials.from_info(key)
+     credentials = service_account.Credentials.from_service_account_info(key)
     append_body = {
         "values": values,
         "range": RANGE,
