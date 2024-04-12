@@ -1,8 +1,8 @@
 name: get price
 
 on:
-#   schedule:
-#   - cron:
+  schedule:
+  - cron: 30 21 * * 1-5
   workflow_dispatch:
 
 jobs:
