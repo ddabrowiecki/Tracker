@@ -5,7 +5,7 @@ import os
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 # from google.oauth2 import service_account
-from google.auth.external_account import Credentials
+from google.auth.identity_pool import Credentials
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
