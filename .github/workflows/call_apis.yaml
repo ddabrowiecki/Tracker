@@ -1,8 +1,8 @@
 name: get price
 
 on:
-  schedule:
-  - cron: '30 21 * * 1-5'
+  # schedule:
+  # - cron: '30 21 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -31,4 +31,4 @@ jobs:
     - name: call av api
       env:
         AV_KEY: ${{ secrets.AV_API_KEY }}
-      run: python av_api.py
+      run: python ./backend/av_api.py
