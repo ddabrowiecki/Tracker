@@ -1,6 +1,6 @@
 import requests
 import os
-from backend.google_api import append_price
+from google_api import append_price
 import datetime
 
 key = os.environ["AV_KEY"]
