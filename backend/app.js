@@ -1,12 +1,15 @@
-const express = require("express");
+import getTrackerValues from "./sheetConsumer.js"
+import cors from "cors"
+import express from "express"
+
 const app = express();
 const port = 5000;
-const cors = require("cors");
 
 app.use(cors());
 
 app.get("/", (req, res) => {
-  return res.send({message: "You are now connected"});
+  const values = getTrackerValues()
+  return res.send(values);
 });
 
 app.listen(port, () => {
