@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  return res.send("You are now connected");
+  return res.send({message: "You are now connected"});
 });
 
 app.listen(port, () => {

@@ -13,8 +13,8 @@ export default function Home() {
           "Content-Type": "application/json",
         },
       });
-      const data = await response;
-      setData(data);
+      const data = await response.json();
+      setData(data.body.message);
     };
 
     fetchData();
