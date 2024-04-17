@@ -21,16 +21,14 @@ export async function getSpreadSheet({spreadsheetId, auth}) {
   }
   
   export async function getSpreadSheetValues({spreadsheetId, auth, sheetName}) {
-    const res = await sheets.spreadsheets.values.get({
-      spreadsheetId,
-      auth,
-      range: sheetName
-    });
-    return res;
+    try {
+      const res = await sheets.spreadsheets.values.get({
+        spreadsheetId,
+        auth,
+        range: sheetName
+      });
+      return res;
+    } catch(error) {
+      console.log(error)
+    }
   }
-
-// module.exports = {
-//   getAuthToken,
-//   getSpreadSheet,
-//   getSpreadSheetValues,
-// }

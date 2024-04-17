@@ -7,7 +7,11 @@ async function getTrackerValues() {
       sheetName: 'Tracker',
       auth
     })
-    return JSON.stringify(response.data.values)
+    if (response){
+      return response.data.values
+    } else {
+      console.log('error')
+    }
 }
 
 export default getTrackerValues;

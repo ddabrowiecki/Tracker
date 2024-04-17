@@ -4,11 +4,10 @@ import express from "express"
 
 const app = express();
 const port = 5000;
-
 app.use(cors());
 
-app.get("/", (req, res) => {
-  const values = getTrackerValues()
+app.get("/", async (req, res) => {
+  const values = await getTrackerValues()
   return res.send(values);
 });
 

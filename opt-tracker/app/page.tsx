@@ -10,20 +10,18 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(nodeBackend, {
+      await fetch(nodeBackend, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-      });
-      const data = await response.json();
-      console.log(data)
+      })
+      .then(response => response.json())
+      .then(json => setData({ stockData: json.slice(1)}))      
     };
     fetchData()
   }, []);
-
-  // console.log(data);
-
+  console.log(data)
   return (
     <>
       <div>Hello World</div>
