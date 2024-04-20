@@ -1,12 +1,20 @@
 "use client";
-
 import { useState, useEffect } from "react";
+import Table from "./components/Table";
 
-const sheet = 'https://docs.google.com/spreadsheets/d/1_xsDfFHZSgGANCFFVZGdPMnaCLlDHIB7xi4XYvZz7yQ/gviz/tq?tqx=out:json'
+interface DataFromApi {
+  stockData: [];
+}
+
 const nodeBackend = 'http://localhost:5000'
 
 export default function Home() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<DataFromApi>({} as DataFromApi);
+  const date = new Date();
+  const dummyStockData = [0,0,0,0,0,0,0]
+  const dateString = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}` 
+  const lastIndex = data.stockData ? data.stockData.length - 1: 0
+  const mostRecentStockData = data.stockData ? data.stockData[lastIndex]: dummyStockData
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,10 +29,14 @@ export default function Home() {
     };
     fetchData()
   }, []);
-  console.log(data)
+  console.log(mostRecentStockData)
   return (
     <>
-      <div>Hello World</div>
+      <div>Today's Date:</div>
+      <div>{dateString}</div>
+      <div>Current Share Price:</div>
+      <div>{`$${mostRecentStockData[1]}`}</div>
+      <Table />
     </>
   );
 }
