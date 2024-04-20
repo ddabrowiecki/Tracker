@@ -1,6 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
+import { FinData } from "../page";
 
-const Table = () => {
+interface TableProps {
+  finData: FinData;
+}
+
+const Table: FC<TableProps> = ({ finData }) => {
   return (
     <>
       <table className="table">
@@ -10,8 +15,8 @@ const Table = () => {
           <th>After Cap Gains Tax Value</th>
         </tr>
         <tr>
-          <td></td>
-          <td>Yup</td>
+          <td>{finData.sharesOwned}</td>
+          <td>mer</td>
         </tr>
       </table>
 
