@@ -24,6 +24,7 @@ const nodeBackend = "http://localhost:5000";
 export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
   const [finData, setFinData] = useState<FinData>({} as FinData);
+
   const date = new Date();
   const dummyStockData = ['0'];
   const dateString = `${date.toLocaleString("default", {
@@ -34,6 +35,7 @@ export default function Home() {
     ? data.stockData[lastIndex]
     : dummyStockData;
   const stockPrice = parseFloat(mostRecentStockData[1])
+  const [ updatedStockPrice, setUpdatedStockPrice ] = useState(stockPrice)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,6 +67,8 @@ export default function Home() {
       <div>Current Share Price:</div>
       <div>{`$${stockPrice.toFixed(2)}`}</div>
       <div>15% Long Term Cap Gains Bracket: $47,026 – $518,900</div>
+      <div>35% Single Current Tax Bracket: $243,726 to $609,350</div>
+      <input name="placeholder" type="text" />
       <Table finData={finData} stockPrice={stockPrice}/>
     </>
   );

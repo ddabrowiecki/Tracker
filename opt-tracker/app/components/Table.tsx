@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { FinData } from "../page";
 
 interface TableProps {
@@ -7,9 +7,14 @@ interface TableProps {
 }
 
 const Table: FC<TableProps> = ({ finData, stockPrice }) => {
-  const totalShares = (finData.sharesOwned*1 + finData.rsusOwned*1)
-  const totalOwnedValue = totalShares * stockPrice
-  const afterCapGains = totalOwnedValue - totalOwnedValue * 0.15
+  const totalShares = finData.sharesOwned * 1 + finData.rsusOwned * 1;
+  const totalOwnedValue = totalShares * stockPrice;
+  const afterCapGains = totalOwnedValue - totalOwnedValue * 0.15;
+  const sharesToBuyValue = finData.sharesToBuy * stockPrice;
+  const spread = (sharesToBuyValue - finData.priceToBuy).toFixed(2);
+  const totalIncome = finData.estimatedSalary * 1 + parseInt(spread);
+  const taxBurden = totalIncome * 0.35;
+
   return (
     <>
       <table className="table">
@@ -33,17 +38,33 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
         <thead>
           <tr>
             <th>Shares to Buy</th>
-            <th>Total To Buy Value (Spread)</th>
-            <th>Estimated 2024 Salary</th>
-            <th>Total 2024 Income</th>
+            <th>Price to Buy</th>
+            <th>Shares to Buy Current Value</th>
+            <th>Spread</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{finData.sharesToBuy}</td>
+            <td>{`$${finData.priceToBuy}`}</td>
+            <td>{`$${sharesToBuyValue}`}</td>
+            <td>{`$${spread}`}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Estimated 2024 Salary</th>
+            <th>Total 2024 Income</th>
+            <th>Approx. Tax Burden</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{`$${finData.estimatedSalary}`}</td>
+            <td>{`$${totalIncome}`}</td>
+            <td>{`$${taxBurden}`}</td>
           </tr>
         </tbody>
       </table>
