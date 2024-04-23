@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Table from "./components/Table";
 
 interface DataFromApi {
-  stockData: [];
+  stockData: string[];
 }
 
 export interface FinData {
@@ -25,7 +25,7 @@ export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
   const [finData, setFinData] = useState<FinData>({} as FinData);
   const date = new Date();
-  const dummyStockData = [0, 0, 0, 0, 0, 0, 0];
+  const dummyStockData = ['0'];
   const dateString = `${date.toLocaleString("default", {
     month: "long",
   })} ${date.getDate()}, ${date.getFullYear()}`;
@@ -33,6 +33,8 @@ export default function Home() {
   const mostRecentStockData = data.stockData
     ? data.stockData[lastIndex]
     : dummyStockData;
+  const stockPrice = parseFloat(mostRecentStockData[1])
+
   useEffect(() => {
     const fetchData = async () => {
       await fetch(nodeBackend, {
@@ -55,14 +57,15 @@ export default function Home() {
     };
     fetchData();
   }, []);
-  console.log(finData)
+
   return (
     <>
       <div>Today's Date:</div>
       <div>{dateString}</div>
       <div>Current Share Price:</div>
-      <div>{`$${mostRecentStockData[1]}`}</div>
-      <Table finData={finData} />
+      <div>{`$${stockPrice.toFixed(2)}`}</div>
+      <div>15% Long Term Cap Gains Bracket: $47,026 – $518,900</div>
+      <Table finData={finData} stockPrice={stockPrice}/>
     </>
   );
 }
