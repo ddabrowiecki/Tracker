@@ -14,9 +14,9 @@ export interface FinData {
     rsusOwned: number;
 }
 
-interface BackResponse {
-  data: {},
-  finData: FinData,
+interface GraphData {
+  date: string,
+  price: string,
 }
 
 const nodeBackend = "http://localhost:5000";
@@ -36,6 +36,16 @@ export default function Home() {
     : dummyStockData;
   const stockPrice = parseFloat(mostRecentStockData[1])
   const [ updatedStockPrice, setUpdatedStockPrice ] = useState(stockPrice)
+  const graphData: GraphData[] = []
+  if (data.stockData) {
+    data.stockData.map(entry => {
+      graphData.push({
+        date: entry[0], 
+        price: entry[1],
+      })
+    })
+    console.log(graphData)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
