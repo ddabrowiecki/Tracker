@@ -36,3 +36,16 @@ table {
   }
   margin-top: 50px;
 }
+
+.chart-container {
+  height: 300px;
+  width: 600px;
+}
+
+.flex {
+  display: flex; 
+}
+
+.space-between {
+  justify-content: space-between;
+}
