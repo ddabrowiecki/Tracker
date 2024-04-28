@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Table from "./components/Table";
 import Chart from "./components/Chart";
+import PriceSlider from "./components/Slider";
 
 interface DataFromApi {
   stockData: string[];
@@ -97,7 +98,7 @@ export default function Home() {
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
-      <input name="placeholder" type="text" />
+      <PriceSlider />
       <Table finData={finData} stockPrice={stockPrice} />
     </>
   );

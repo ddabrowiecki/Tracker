@@ -49,3 +49,23 @@ table {
 .space-between {
   justify-content: space-between;
 }
+
+.space-around {
+  justify-content: space-around;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
