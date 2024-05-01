@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Table from "./components/Table";
 import Chart from "./components/Chart";
 import PriceSlider from "./components/Slider";
+import EnableSliderButton from "./components/EnableSliderButton";
 
 interface DataFromApi {
   stockData: string[];
@@ -26,7 +27,9 @@ const nodeBackend = "http://localhost:5000";
 export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
   const [finData, setFinData] = useState<FinData>({} as FinData);
-
+  const [priceSlider, setPriceSlider] = useState(30);
+  const [toggleSlider, setToggleSlider] = useState(false);
+  console.log(priceSlider)
   const date = new Date();
   const dummyStockData = ["0"];
   const dateString = `${date.toLocaleString("default", {
@@ -49,6 +52,14 @@ export default function Home() {
       });
     });
   }
+
+  const handlePriceSlider = (price: number) => {
+    setPriceSlider(price);
+  };
+
+  const handleEnableSlider = () => {
+    setToggleSlider(!toggleSlider);
+  };
 
   const createGraphDataObject = (graphData: GraphData[]) => {
     return {
@@ -98,7 +109,8 @@ export default function Home() {
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
-      <PriceSlider />
+      <EnableSliderButton handleEnableSlider={handleEnableSlider} />
+      <PriceSlider priceSliderValue={priceSlider} handlePriceSlider={handlePriceSlider} toggleSlider={toggleSlider} />
       <Table finData={finData} stockPrice={stockPrice} />
     </>
   );
