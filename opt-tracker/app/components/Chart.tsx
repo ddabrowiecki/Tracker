@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { Line } from "react-chartjs-2";
 import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
-import { GraphData } from "../../app/page";
 
 interface DataPoint {
   label: string;

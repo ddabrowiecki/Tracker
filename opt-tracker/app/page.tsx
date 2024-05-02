@@ -29,13 +29,14 @@ const nodeBackend = "http://localhost:5000";
 
 export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
+  const [dataIsLoaded, setDataIsLoaded] = useState<boolean>(false);
   const [finData, setFinData] = useState<FinData>({} as FinData);
   const [stockPrice, setStockPrice] = useState(0);
-  const [staticStockPrice, setStaticStockPrice] = useState(0)
+  const [staticStockPrice, setStaticStockPrice] = useState(0);
   const [priceSlider, setPriceSlider] = useState(40);
   const [toggleSlider, setToggleSlider] = useState(false);
-  const [graphData, setGraphData] = useState<GraphData[]>([])
-  const [updatedPrice, setUpdatedPrice] = useState<number>(stockPrice)
+  const [graphData, setGraphData] = useState<GraphData[]>([]);
+  const [updatedPrice, setUpdatedPrice] = useState<number>(stockPrice);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,20 +68,33 @@ export default function Home() {
     }
   }, [data]);
 
-  const date = new Date();
-  const dateString = `${date.toLocaleString("default", {
-    month: "long",
-  })} ${date.getDate()}, ${date.getFullYear()}`;
-
   const makeGraphData = (stockData: StockData[]) => {
+    const graph: GraphData[] = [];
     stockData.map((entry) => {
-      graphData.push({
+      graph.push({
         date: entry[0],
         price: parseFloat(entry[1]),
       });
     });
-    setGraphData(graphData)
+    setGraphData(graph);
   };
+
+  const createGraphDataObject = (graphData: GraphData[]) => {
+    return {
+      labels: graphData.map((data) => data.date),
+      datasets: [
+        {
+          label: "RDDT Progress Over Time",
+          data: graphData.map((data) => data.price),
+        },
+      ],
+    };
+  };
+
+  const date = new Date();
+  const dateString = `${date.toLocaleString("default", {
+    month: "long",
+  })} ${date.getDate()}, ${date.getFullYear()}`;
 
   const getStockPrice = (stockData: StockData[]) => {
     const lastIndex = stockData.length - 1;
@@ -102,17 +116,9 @@ export default function Home() {
     setStockPrice(priceSlider);
   };
 
-  const createGraphDataObject = (graphData: GraphData[]) => {
-    return {
-      labels: graphData.map((data) => data.date),
-      datasets: [
-        {
-          label: "RDDT Progress Over Time",
-          data: graphData.map((data) => data.price),
-        },
-      ],
-    };
-  };
+  const resetSlider = () => {
+    setStockPrice(staticStockPrice)
+  }
 
   return (
     <>
@@ -125,7 +131,7 @@ export default function Home() {
           <div>15% Long Term Cap Gains Bracket: $47,026 – $518,900</div>
           <div>35% Single Current Tax Bracket: $243,726 to $609,350</div>
         </div>
-        <Chart data={graphData && createGraphDataObject(graphData)} />
+        <Chart data={createGraphDataObject(graphData)} />
       </div>
       <EnableSliderButton handleEnableSlider={handleEnableSlider} />
       <PriceSlider
@@ -137,6 +143,7 @@ export default function Home() {
         <UpdatedPrice
           updatedPrice={updatedPrice}
           recalculate={handleCalculation}
+          reset={resetSlider}
         />
       )}
       <Table finData={finData} stockPrice={stockPrice} />
