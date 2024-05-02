@@ -33,7 +33,7 @@ export default function Home() {
   const [finData, setFinData] = useState<FinData>({} as FinData);
   const [stockPrice, setStockPrice] = useState(0);
   const [staticStockPrice, setStaticStockPrice] = useState(0);
-  const [priceSlider, setPriceSlider] = useState(40);
+  const [priceSlider, setPriceSlider] = useState(0);
   const [toggleSlider, setToggleSlider] = useState(false);
   const [graphData, setGraphData] = useState<GraphData[]>([]);
   const [updatedPrice, setUpdatedPrice] = useState<number>(stockPrice);
@@ -102,6 +102,7 @@ export default function Home() {
     const price = parseFloat(mostRecentStockData[1]);
     setStaticStockPrice(price);
     setStockPrice(price);
+    setPriceSlider(price);
   };
 
   const handlePriceSlider = (price: number) => {
@@ -117,8 +118,9 @@ export default function Home() {
   };
 
   const resetSlider = () => {
-    setStockPrice(staticStockPrice)
-  }
+    setStockPrice(staticStockPrice);
+    setPriceSlider(staticStockPrice);
+  };
 
   return (
     <>
