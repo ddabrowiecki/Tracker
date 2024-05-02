@@ -130,8 +130,6 @@ export default function Home() {
           <div>{dateString}</div>
           <div>Current Share Price:</div>
           <div>{`$${staticStockPrice.toFixed(2)}`}</div>
-          <div>15% Long Term Cap Gains Bracket: $47,026 – $518,900</div>
-          <div>35% Single Current Tax Bracket: $243,726 to $609,350</div>
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
