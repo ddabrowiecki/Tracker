@@ -15,6 +15,7 @@ interface DataFromApi {
 export interface FinData {
   estimatedSalary: number;
   sharesOwned: number;
+  isoPurchasePrice: number;
   sharesToBuy: number;
   priceToBuy: number;
   rsusOwned: number;
@@ -48,10 +49,12 @@ export default function Home() {
       })
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
           setData({ stockData: json.data.slice(1) });
           setFinData({
             estimatedSalary: json.finData.estimatedSalary,
             sharesOwned: json.finData.sharesOwned,
+            isoPurchasePrice: json.finData.isoPurchasePrice,
             sharesToBuy: json.finData.sharesToBuy,
             priceToBuy: json.finData.priceToBuy,
             rsusOwned: json.finData.rsusOwned,
@@ -146,7 +149,7 @@ export default function Home() {
           reset={resetSlider}
         />
       )}
-      <Table finData={finData} stockPrice={stockPrice} />
+      {finData !== undefined && <Table finData={finData} stockPrice={stockPrice} />}
     </>
   );
 }

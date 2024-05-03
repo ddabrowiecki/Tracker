@@ -62,14 +62,14 @@ const determineTaxBrackets = (totalOwnedValue: number, totalIncome: number) => {
 }
 
 const Table: FC<TableProps> = ({ finData, stockPrice }) => {
-  const totalShares = finData.sharesOwned * 1 + finData.rsusOwned * 1;
-  const totalOwnedValue = totalShares * stockPrice;
+  const rsuValue =  finData.rsusOwned * stockPrice;
+  const isoValue = finData.sharesOwned * stockPrice;
+  const isoSpread = isoValue - finData.isoPurchasePrice
+  const totalOwnedValue = rsuValue + isoSpread
   const sharesToBuyValue = finData.sharesToBuy * stockPrice;
   const spread = (sharesToBuyValue - finData.priceToBuy).toFixed(2);
   const totalIncome = finData.estimatedSalary * 1 + parseInt(spread);
-  
   const [capitalGains, regularIncome] = determineTaxBrackets(totalOwnedValue, totalIncome)
-  console.log(capitalGains, regularIncome)
   return (
     <>
       <div>{capitalGains.rate} Long Term Cap Gains Bracket: {capitalGains.range}</div>
@@ -77,16 +77,20 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
         <table className="table">
           <thead>
             <tr>
-              <th>Shares Owned</th>
-              <th>Total Owned Value</th>
+              <th>RSUs Owned</th>
+              <th>ISOs Owned</th>
+              <th>ISO Purchase Price</th>
+              <th>ISO Spread plus RSU value</th>
               <th>After Cap Gains Tax Value</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{totalShares}</td>
+              <td>{finData.rsusOwned}</td>
+              <td>{finData.sharesOwned}</td>
+              <td>{finData.isoPurchasePrice && `$${finData.isoPurchasePrice}`}</td>
               <td>{`$${totalOwnedValue.toFixed(2)}`}</td>
-              <td>{`$${capitalGains.totalAfterTax.toFixed(2)}`}</td>
+              <td>{capitalGains.totalAfterTax && `$${capitalGains.totalAfterTax.toFixed(2)}`}</td>
             </tr>
           </tbody>
         </table>
