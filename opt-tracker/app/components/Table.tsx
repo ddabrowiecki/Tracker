@@ -70,11 +70,12 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   const spread = (sharesToBuyValue - finData.priceToBuy).toFixed(2);
   const totalIncome = finData.estimatedSalary * 1 + parseInt(spread);
   const [capitalGains, regularIncome] = determineTaxBrackets(totalOwnedValue, totalIncome)
+  
   return (
     <>
       <div>{capitalGains.rate} Long Term Cap Gains Bracket: {capitalGains.range}</div>
       <div className="flex space-around">
-        <table className="table">
+        <table className="table font-mouldyCheese">
           <thead>
             <tr>
               <th>RSUs Owned</th>

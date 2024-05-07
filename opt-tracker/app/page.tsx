@@ -49,7 +49,7 @@ export default function Home() {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json)
+          console.log(json);
           setData({ stockData: json.data.slice(1) });
           setFinData({
             estimatedSalary: json.finData.estimatedSalary,
@@ -127,21 +127,26 @@ export default function Home() {
 
   return (
     <>
-      <div className="top-container flex space-between">
-        <div className="info-container">
+      <div className="flex jc-center">
+        <h2 className="font-kadoku font-60">Reddit Tracker</h2>
+      </div>
+      <div className="top-container flex space-around">
+        <div className="info-container font-mouldyCheese font-30">
           <div>Today's Date:</div>
-          <div>{dateString}</div>
-          <div>Current Share Price:</div>
-          <div>{`$${staticStockPrice.toFixed(2)}`}</div>
+          <div className="font-white">{dateString}</div>
+          <div className="mt-20">Current Share Price:</div>
+          <div className="font-white">{`$${staticStockPrice.toFixed(2)}`}</div>
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
-      <EnableSliderButton handleEnableSlider={handleEnableSlider} />
-      <PriceSlider
-        priceSliderValue={priceSlider}
-        handlePriceSlider={handlePriceSlider}
-        toggleSlider={toggleSlider}
-      />
+      <div className="flex ai-flex-end flex-column mr-30">
+        <EnableSliderButton handleEnableSlider={handleEnableSlider} />
+        <PriceSlider
+          priceSliderValue={priceSlider}
+          handlePriceSlider={handlePriceSlider}
+          toggleSlider={toggleSlider}
+        />
+      </div>
       {toggleSlider && (
         <UpdatedPrice
           updatedPrice={updatedPrice}
@@ -149,7 +154,9 @@ export default function Home() {
           reset={resetSlider}
         />
       )}
-      {finData !== undefined && <Table finData={finData} stockPrice={stockPrice} />}
+      {finData !== undefined && (
+        <Table finData={finData} stockPrice={stockPrice} />
+      )}
     </>
   );
 }

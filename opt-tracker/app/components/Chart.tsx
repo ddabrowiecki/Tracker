@@ -16,6 +16,7 @@ export interface ChartProps {
 }
 
 Chart.register(CategoryScale);
+Chart.defaults.color = "rgba(255, 86, 0)"
 
 const LineChart: FC<ChartProps> = ({ data }) => {
   return (

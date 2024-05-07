@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 6, 47, 150;
+  --foreground-rgb: 6, 44, 105;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --white: 255, 255, 255;
+  --orange-red: 255, 86, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,9 +18,23 @@
   }
 }
 
+@font-face {
+  font-family: 'kadoku';
+  src: url('../fonts/Kadoku-YqEa8.otf'),
+}
+
+@font-face {
+  font-family: 'mouldy-cheese';
+  src: url('../fonts/MouldyCheeseRegular-WyMWG.ttf'),
+}
+
 body {
-  color: rgb(var(--white));
+  color: rgb(var(--orange-red));
   background-color: rgb(var(--foreground-rgb));
+}
+
+.font-white {
+  color: rgb(var(--white));
 }
 
 @layer utilities {
@@ -40,6 +55,7 @@ table {
 .chart-container {
   height: 300px;
   width: 600px;
+  color: rgb(255, 86, 0)
 }
 
 .flex {
@@ -78,6 +94,34 @@ table {
   justify-content: flex-start;
 }
 
+.ai-flex-end {
+  align-items: flex-end;
+}
+
 .ai-center {
   align-items: center;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.font-60 {
+  font-size: 60px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.mr-30 {
+  margin-right: 30px;
 }
