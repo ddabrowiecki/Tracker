@@ -29,7 +29,7 @@ const PriceSlider: FC<PriceSliderProps> = ({ toggleSlider, priceSliderValue, han
   };
 
   return (
-    <Box sx={{ width: 700, backgroundColor: "white" }} className="ml-10 mt-20">
+    <Box sx={{ width: 700, backgroundColor: "white" }} className="ml-10 mt-20 border-radius-5">
       <Slider
         className="width-90 ml-30"
         aria-label="Price Slider"
@@ -37,7 +37,7 @@ const PriceSlider: FC<PriceSliderProps> = ({ toggleSlider, priceSliderValue, han
         min={0}
         max={100}
         value={priceSliderValue}
-        color="secondary"
+        color="warning"
         marks={marks}
         valueLabelDisplay="on"
         onChange={handleChange}

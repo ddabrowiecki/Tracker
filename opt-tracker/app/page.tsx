@@ -139,7 +139,7 @@ export default function Home() {
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
-      <div className="flex ai-flex-end flex-column mr-30">
+      <div className="flex ai-flex-end flex-column width-95">
         <EnableSliderButton handleEnableSlider={handleEnableSlider} />
         <PriceSlider
           priceSliderValue={priceSlider}
@@ -147,13 +147,15 @@ export default function Home() {
           toggleSlider={toggleSlider}
         />
       </div>
-      {toggleSlider && (
-        <UpdatedPrice
-          updatedPrice={updatedPrice}
-          recalculate={handleCalculation}
-          reset={resetSlider}
-        />
-      )}
+      <div className="flex jc-flex-end width-95">
+        {toggleSlider && (
+          <UpdatedPrice
+            updatedPrice={updatedPrice}
+            recalculate={handleCalculation}
+            reset={resetSlider}
+          />
+        )}
+      </div>
       {finData !== undefined && (
         <Table finData={finData} stockPrice={stockPrice} />
       )}

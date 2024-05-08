@@ -44,12 +44,16 @@ body {
 }
 
 table {
-  border:1px solid #FF0000;
+  border:1px solid rgb(var(--orange-red));
   td, th {
-    border:1px solid #FF0000;
-    padding: 20px;
+    border:1px solid rgb(var(--orange-red));
+    padding: 5px;
   }
   margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .chart-container {
@@ -74,8 +78,16 @@ table {
   margin-left: 10px;
 }
 
+.ml-5 {
+  margin-left: 5px;
+}
+
 .mt-20 {
   margin-top: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
 }
 
 .width-90 {
@@ -92,6 +104,10 @@ table {
 
 .jc-flex-start {
   justify-content: flex-start;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
 }
 
 .ai-flex-end {
@@ -114,14 +130,30 @@ table {
   font-size: 30px;
 }
 
+.font-20 {
+  font-size: 20px;
+}
+
 .flex-column {
   flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .jc-space-around {
   justify-content: space-around;
 }
 
-.mr-30 {
-  margin-right: 30px;
+.width-95 {
+  width: 95%;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
+}
+
+.td {
+  color: rgb(var(--white));
 }
