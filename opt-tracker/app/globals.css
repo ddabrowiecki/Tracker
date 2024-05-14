@@ -7,6 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --white: 255, 255, 255;
+  --black: 0, 0, 0;
   --orange-red: 255, 86, 0;
 }
 
@@ -29,6 +30,11 @@
 }
 
 body {
+  color: rgb(var(--orange-red));
+  background-color: rgb(var(--foreground-rgb));
+}
+
+.modal {
   color: rgb(var(--orange-red));
   background-color: rgb(var(--foreground-rgb));
 }
@@ -84,6 +90,14 @@ table {
 
 .mt-20 {
   margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-60 {
+  margin-top: 60px;
 }
 
 .mb-40 {
@@ -156,4 +170,11 @@ table {
 
 .td {
   color: rgb(var(--white));
+}
+
+input {
+  border-radius: 5px;
+  font-size: 15px;
+  color: rgb(var(--black));
+  font-family:"Arial, Helvetica, sans-serif";
 }
