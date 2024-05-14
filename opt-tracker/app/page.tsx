@@ -5,6 +5,7 @@ import Chart from "./components/Chart";
 import PriceSlider from "./components/Slider";
 import EnableSliderButton from "./components/EnableSliderButton";
 import UpdatedPrice from "./components/UpdatedPrice";
+import FinancialInfoModal from "./components/FinancialInfoModal";
 
 type StockData = string[];
 
@@ -13,12 +14,14 @@ interface DataFromApi {
 }
 
 export interface FinData {
-  estimatedSalary: number;
-  sharesOwned: number;
-  isoPurchasePrice: number;
-  sharesToBuy: number;
-  priceToBuy: number;
   rsusOwned: number;
+  nsosOwned: number;
+  isosOwned: number;
+  isoPurchasePrice: number;
+  nsoPurchasePrice: number;
+  estimatedSalary: number;
+  isoSharesToBuy: number;
+  nsoSharesToBuy: number;
 }
 
 export interface GraphData {
@@ -38,6 +41,7 @@ export default function Home() {
   const [toggleSlider, setToggleSlider] = useState(false);
   const [graphData, setGraphData] = useState<GraphData[]>([]);
   const [updatedPrice, setUpdatedPrice] = useState<number>(stockPrice);
+  const [modalOpen, setModalOpen] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,14 +55,6 @@ export default function Home() {
         .then((json) => {
           console.log(json);
           setData({ stockData: json.data.slice(1) });
-          setFinData({
-            estimatedSalary: json.finData.estimatedSalary,
-            sharesOwned: json.finData.sharesOwned,
-            isoPurchasePrice: json.finData.isoPurchasePrice,
-            sharesToBuy: json.finData.sharesToBuy,
-            priceToBuy: json.finData.priceToBuy,
-            rsusOwned: json.finData.rsusOwned,
-          });
         });
     };
     fetchData();
@@ -125,7 +121,14 @@ export default function Home() {
     setPriceSlider(staticStockPrice);
   };
 
-  return (
+  const closeModal = (finData: FinData) => {
+    setFinData(finData);
+    setModalOpen(false);
+  }
+
+  return modalOpen ? (
+    <FinancialInfoModal open={modalOpen} closeModal={closeModal}/>
+  ) : (
     <>
       <div className="flex jc-center">
         <h2 className="font-kadoku font-60">Reddit Tracker</h2>
