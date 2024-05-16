@@ -3,7 +3,6 @@ const sheets = google.sheets('v4');
 
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-
 export async function getAuthToken() {
   const auth = new google.auth.GoogleAuth({
     scopes: SCOPES
