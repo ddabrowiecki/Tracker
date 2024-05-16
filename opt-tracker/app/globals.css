@@ -43,6 +43,10 @@ body {
   color: rgb(var(--white));
 }
 
+.font-orange-red {
+  color: rgb(var(--orange-red))
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -86,6 +90,10 @@ table {
 
 .ml-5 {
   margin-left: 5px;
+}
+
+.mt-5 {
+  margin-top: 5px;
 }
 
 .mt-20 {

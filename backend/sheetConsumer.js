@@ -10,7 +10,7 @@ async function getTrackerValues() {
     if (response){
       return response.data.values
     } else {
-      console.log('error')
+      // console.log('error')
     }
 }
 

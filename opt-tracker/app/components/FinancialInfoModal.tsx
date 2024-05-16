@@ -2,6 +2,10 @@ import React, { FC, useState } from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 import { FinData } from "../page";
 
 interface ModalProps {
@@ -18,6 +22,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
   const [isoSharesToBuy, setIsoSharesToBuy] = useState<number>(0);
   const [nsoSharesToBuy, setNsoSharesToBuy] = useState<number>(0);
   const [estimatedSalary, setEstimatedSalary] = useState<number>(0);
+  const [filingStatus, setFilingStatus] = useState<string>("");
 
   const mapToFinData = () => {
     const finData = {} as FinData;
@@ -29,12 +34,17 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
     finData.isoSharesToBuy = isoSharesToBuy;
     finData.nsoSharesToBuy = nsoSharesToBuy;
     finData.estimatedSalary = estimatedSalary;
+    finData.filingStatus = filingStatus;
     return finData;
   };
 
   const handleSubmitInfo = () => {
     const finData = mapToFinData();
     closeModal(finData);
+  };
+
+  const handleSelectChange = (event: SelectChangeEvent) => {
+    setFilingStatus(event.target.value as string);
   };
 
   return (
@@ -96,12 +106,36 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             />
           </div>
         </div>
-        <div className="mt-40 flex flex-column ai-center font-mouldyCheese">
-          <p>{`How much do you plan to make this year (income without stock options)?`}</p>
-          <input
-            type="text"
-            onChange={(e) => setEstimatedSalary(parseInt(e.target.value))}
-          />
+        <div className="mt-40 flex space-around font-mouldyCheese">
+          <div>
+            <p>{`How much do you plan to make this year (income without stock options)?`}</p>
+            <input
+              type="text"
+              onChange={(e) => setEstimatedSalary(parseInt(e.target.value))}
+            />
+          </div>
+          <div>
+            <p>{`What is your tax filing status?`}</p>
+            <Box className="mt-5" sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <Select
+                color="warning"
+                  style={{backgroundColor: "white", maxHeight: '30px'}}
+                  value={filingStatus}
+                  onChange={handleSelectChange}
+                >
+                  <MenuItem value="single">Single</MenuItem>
+                  <MenuItem value="marriedFilingJointly">
+                    Married Filing Jointly
+                  </MenuItem>
+                  <MenuItem value="marriedFilingSeparately">
+                    Married Filing Separately
+                  </MenuItem>
+                  <MenuItem value="headOfHousehold">Head of Household</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </div>
         </div>
         <div className="mt-20 flex jc-flex-end width-95">
           <Button

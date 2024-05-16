@@ -22,6 +22,7 @@ export interface FinData {
   estimatedSalary: number;
   isoSharesToBuy: number;
   nsoSharesToBuy: number;
+  filingStatus: string;
 }
 
 export interface GraphData {
@@ -53,7 +54,6 @@ export default function Home() {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
           setData({ stockData: json.data.slice(1) });
         });
     };
