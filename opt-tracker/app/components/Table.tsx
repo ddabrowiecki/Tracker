@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { FinData } from "../page";
-import { determineTaxBrackets } from "../utils"
+import { determineTaxBrackets, mapToNameString } from "../utils"
 
 interface TableProps {
     finData: FinData;
@@ -20,7 +20,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   const totalSharesValue = isosToBuyValue + nsosToBuyValue;
   const nsoSpread = (nsosToBuyValue - finData.nsoPurchasePrice).toFixed(2);
   const totalIncome = finData.estimatedSalary * 1 + parseInt(nsoSpread);
-  const [capitalGains, regularIncome] = determineTaxBrackets(
+  const [capitalGains, regularIncome ] = determineTaxBrackets(
     totalOwnedValue,
     totalIncome,
     finData.filingStatus,
@@ -69,7 +69,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           <div className="font-20">Estimated Tax Bracket</div>
           <div className="flex flex-row mt-5">
             <div>{`Filing Status: `}</div>
-            <div className="font-white ml-5">{`Single`}</div>
+            <div className="font-white ml-5">{mapToNameString(finData.filingStatus)}</div>
           </div>
           <div className="flex flex-row mt-5">
             <div>{`${regularIncome.rate} Regular Income Tax Bracket: `}</div>

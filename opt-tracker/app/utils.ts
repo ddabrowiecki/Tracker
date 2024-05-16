@@ -20,6 +20,19 @@ interface TaxInfo {
   totalAfterTax: number;
 }
 
+export const mapToNameString = (key: string) => {
+  switch (key) {
+    case "single":
+      return "Single";
+    case "marriedFilingJointly":
+      return "Married Filing Jointly";
+    case "marriedFilingSeparately":
+      return "Married Filing Separately";
+    case "headOfHousehold":
+      return "Head of Household";
+  }
+};
+
 const taxBrackets: TaxBracketMaster = {
   capitalGains: {
     single: {
@@ -86,7 +99,7 @@ const taxBrackets: TaxBracketMaster = {
 export const determineTaxBrackets = (
   totalOwnedValue: number,
   totalIncome: number,
-  filingStatus: string,
+  filingStatus: string
 ) => {
   const capGains: TaxInfo = {} as TaxInfo;
   const regIncome: TaxInfo = {} as TaxInfo;
@@ -105,5 +118,5 @@ export const determineTaxBrackets = (
       regIncome.range = bracket[4];
     }
   });
-  return [capGains, regIncome];
+  return [capGains, regIncome]
 };
