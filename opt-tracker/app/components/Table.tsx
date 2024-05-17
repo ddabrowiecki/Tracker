@@ -29,16 +29,16 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   return (
     <>
       <div>
-        <p className="font-mouldyCheese font-white">
+        <p className="font-mouldyCheese font-white mt-20 ml-30">
           **This tool will not help calculate for any option type that has been
           owned for less than a year**
         </p>
-        <p className="font-mouldyCheese font-white">
-          $$$ you have if you sell today
+        <p className="font-mouldyCheese font-white mt-20 font-30 ml-30">
+          Money you have if you sell today
         </p>
       </div>
-      <div className="flex space-around">
-        <table className="table font-mouldyCheese">
+      <div className="flex space-around ai-center">
+        <table className="table font-mouldyCheese width-60">
           <thead>
             <tr>
               <th>RSUs Owned</th>
@@ -81,10 +81,10 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           </div>
         </div>
       </div>
-      <div className="font-mouldyCheese font-white">
-        <p>$$$ you will pay to buy and its value</p>
+      <div className="font-mouldyCheese font-white mt-20 font-30 ml-30">
+        <p>Money you will pay to buy options and their value</p>
       </div>
-      <div className="table-level-two flex ai-center mb-40 mt-10">
+      <div className="table-level-two flex ai-center mb-40 mt-10 ml-30">
         <table className="table ml-10 font-mouldyCheese">
           <thead>
             <tr>
@@ -112,7 +112,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           </tbody>
         </table>
       </div>
-      <div>
+      <div className="mb-40 ml-30">
         <table className="font-mouldyCheese">
           <thead>
             <tr>

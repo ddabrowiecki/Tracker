@@ -34,7 +34,6 @@ const nodeBackend = "http://localhost:5000";
 
 export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
-  const [dataIsLoaded, setDataIsLoaded] = useState<boolean>(false);
   const [finData, setFinData] = useState<FinData>({} as FinData);
   const [stockPrice, setStockPrice] = useState(0);
   const [staticStockPrice, setStaticStockPrice] = useState(0);
