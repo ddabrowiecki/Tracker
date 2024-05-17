@@ -13,7 +13,7 @@ interface TaxBracketMaster {
   regularIncome: TaxTypeBrackets;
 }
 
-interface TaxInfo {
+export interface TaxInfo {
   rate: string;
   range: string;
   tax: number;
@@ -118,5 +118,6 @@ export const determineTaxBrackets = (
       regIncome.range = bracket[4];
     }
   });
-  return [capGains, regIncome]
+
+  return [capGains, regIncome];
 };
