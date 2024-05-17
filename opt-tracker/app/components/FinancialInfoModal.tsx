@@ -48,7 +48,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
 
   const cleanInput = (amount: string) => {
     return parseFloat(amount.replace(/[$,]/g, ""));
-  }
+  };
 
   return (
     <Modal open={open}>
@@ -90,7 +90,9 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               type="text"
               onChange={(e) => setIsoSharesToBuy(cleanInput(e.target.value))}
             />
-            <p className="mt-5">What total do you need to pay to buy your ISOs?</p>
+            <p className="mt-5">
+              What total do you need to pay to buy your ISOs?
+            </p>
             <input
               type="text"
               onChange={(e) => setIsoPurchasePrice(cleanInput(e.target.value))}
@@ -109,7 +111,9 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               type="text"
               onChange={(e) => setNsoSharesToBuy(cleanInput(e.target.value))}
             />
-            <p className="mt-5">What total do you need to pay to buy your NSOs?</p>
+            <p className="mt-5">
+              What total do you need to pay to buy your NSOs?
+            </p>
             <input
               type="text"
               onChange={(e) => setNsoPurchasePrice(cleanInput(e.target.value))}
@@ -120,7 +124,11 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
                 <FormControl fullWidth>
                   <Select
                     color="warning"
-                    style={{ backgroundColor: "white", maxHeight: "30px", maxWidth: "200px" }}
+                    style={{
+                      backgroundColor: "white",
+                      maxHeight: "30px",
+                      maxWidth: "200px",
+                    }}
                     value={filingStatus}
                     onChange={handleSelectChange}
                   >
