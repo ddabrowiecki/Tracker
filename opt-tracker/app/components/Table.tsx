@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
 import { FinData } from "../page";
-import { determineTaxBrackets, mapToNameString, TaxInfo } from "../utils"
+import { determineTaxBrackets, mapToNameString, TaxInfo } from "../utils";
 
 interface TableProps {
-    finData: FinData;
-    stockPrice: number;
-  }
+  finData: FinData;
+  stockPrice: number;
+}
 
 const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   const rsuValue = finData.rsusOwned * stockPrice;
@@ -20,10 +20,10 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   const totalSharesValue = isosToBuyValue + nsosToBuyValue;
   const nsoSpread = (nsosToBuyValue - finData.nsoPurchasePrice).toFixed(2);
   const totalIncome = finData.estimatedSalary * 1 + parseInt(nsoSpread);
-  const [capitalGains, regularIncome ]: TaxInfo[] = determineTaxBrackets(
+  const [capitalGains, regularIncome]: TaxInfo[] = determineTaxBrackets(
     totalOwnedValue,
     totalIncome,
-    finData.filingStatus,
+    finData.filingStatus
   );
 
   return (
@@ -69,7 +69,9 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           <div className="font-20">Estimated Tax Bracket</div>
           <div className="flex flex-row mt-5">
             <div>{`Filing Status: `}</div>
-            <div className="font-white ml-5">{mapToNameString(finData.filingStatus)}</div>
+            <div className="font-white ml-5">
+              {mapToNameString(finData.filingStatus)}
+            </div>
           </div>
           <div className="flex flex-row mt-5">
             <div>{`${regularIncome.rate} Regular Income Tax Bracket: `}</div>
@@ -115,7 +117,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
       <div className="font-mouldyCheese font-white mt-20 font-30 ml-30">
         <p>Estimated Tax Burden</p>
       </div>
-      <div className="mb-40 ml-30">
+      <div className="mb-40 ml-30 flex space-between">
         <table className="font-mouldyCheese">
           <thead>
             <tr>
@@ -136,6 +138,9 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
             </tr>
           </tbody>
         </table>
+        <div className="max-w-40">
+          <p className="font-mouldyCheese font-white">{`Tax Burden is calculated as a simple percentage. Your ultimate tax burden may vary based on your personal circumstances (e.g. deductions, credits)`}</p>
+        </div>
       </div>
     </>
   );

@@ -207,3 +207,7 @@ input {
   align-items: center;
   min-height: 500px;
 }
+
+.max-w-40 {
+  max-width: 40%;
+}
