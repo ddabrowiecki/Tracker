@@ -19,10 +19,11 @@ export interface FinData {
   nsosOwned: number;
   isosOwned: number;
   isoPurchasePrice: number;
-  nsoPurchasePrice: number;
   estimatedSalary: number;
   isoSharesToBuy: number;
   nsoSharesToBuy: number;
+  isoSharesToBuyPurchasePrice: number;
+  nsoSharesToBuyPurchasePrice: number;
   filingStatus: string;
 }
 

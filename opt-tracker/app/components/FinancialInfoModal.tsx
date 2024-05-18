@@ -17,9 +17,10 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
   const [nsosOwned, setNsosOwned] = useState<number>(0);
   const [isosOwned, setIsosOwned] = useState<number>(0);
   const [isoPurchasePrice, setIsoPurchasePrice] = useState<number>(0);
-  const [nsoPurchasePrice, setNsoPurchasePrice] = useState<number>(0);
   const [isoSharesToBuy, setIsoSharesToBuy] = useState<number>(0);
   const [nsoSharesToBuy, setNsoSharesToBuy] = useState<number>(0);
+  const [isoSharesToBuyPurchasePrice, setIsoSharesToBuyPurchasePrice] = useState<number>(0);
+  const [nsoSharesToBuyPurchasePrice, setNsoSharesToBuyPurchasePrice] = useState<number>(0);
   const [estimatedSalary, setEstimatedSalary] = useState<number>(0);
   const [filingStatus, setFilingStatus] = useState<string>("single");
 
@@ -29,9 +30,10 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
     finData.nsosOwned = nsosOwned;
     finData.isosOwned = isosOwned;
     finData.isoPurchasePrice = isoPurchasePrice;
-    finData.nsoPurchasePrice = nsoPurchasePrice;
     finData.isoSharesToBuy = isoSharesToBuy;
     finData.nsoSharesToBuy = nsoSharesToBuy;
+    finData.isoSharesToBuyPurchasePrice = isoSharesToBuyPurchasePrice;
+    finData.nsoSharesToBuyPurchasePrice = nsoSharesToBuyPurchasePrice;
     finData.estimatedSalary = estimatedSalary;
     finData.filingStatus = filingStatus;
     return finData;
@@ -58,7 +60,6 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
         </div>
         <div className="flex ai-center font-mouldyCheese flex-column mt-20">
           <p>Let's start by getting some of your stock information!</p>
-          {/* <p>Once you submit this tool will help you understand how much money you have, how much your unexercised options are worth and how much tax you stand to pay in 2024 tax when you exercise</p> */}
         </div>
         <div className="flex space-around font-mouldyCheese mt-20">
           <div>
@@ -66,6 +67,11 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             <input
               type="text"
               onChange={(e) => setIsosOwned(cleanInput(e.target.value))}
+            />
+            <p className="mt-5">How much did you pay for these ISOs?</p>
+            <input
+              type="text"
+              onChange={(e) => setIsoPurchasePrice(cleanInput(e.target.value))}
             />
           </div>
           <div>
@@ -83,7 +89,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             />
           </div>
         </div>
-        <div className="flex space-around font-mouldyCheese mt-60 ml-30">
+        <div className="flex space-around font-mouldyCheese mt-40 ml-30">
           <div>
             <p>How many ISOs do you have left?</p>
             <input
@@ -95,7 +101,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             </p>
             <input
               type="text"
-              onChange={(e) => setIsoPurchasePrice(cleanInput(e.target.value))}
+              onChange={(e) => setIsoSharesToBuyPurchasePrice(cleanInput(e.target.value))}
             />
             <div className="mt-40">
               <p>{`How much do you plan to make this year (income without stock options)?`}</p>
@@ -116,7 +122,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             </p>
             <input
               type="text"
-              onChange={(e) => setNsoPurchasePrice(cleanInput(e.target.value))}
+              onChange={(e) => setNsoSharesToBuyPurchasePrice(cleanInput(e.target.value))}
             />
             <div className="mt-40">
               <p>{`What is your tax filing status?`}</p>

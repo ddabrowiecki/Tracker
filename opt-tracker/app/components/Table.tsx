@@ -16,9 +16,9 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
   const isosToBuyValue = finData.isoSharesToBuy * stockPrice;
   const nsosToBuyValue = finData.nsoSharesToBuy * stockPrice;
   const totalPurchasePrice =
-    finData.isoPurchasePrice + finData.nsoPurchasePrice;
+    finData.isoSharesToBuyPurchasePrice + finData.nsoSharesToBuyPurchasePrice;
   const totalSharesValue = isosToBuyValue + nsosToBuyValue;
-  const nsoSpread = (nsosToBuyValue - finData.nsoPurchasePrice).toFixed(2);
+  const nsoSpread = (nsosToBuyValue - finData.nsoSharesToBuyPurchasePrice).toFixed(2);
   const totalIncome = finData.estimatedSalary * 1 + parseInt(nsoSpread);
   const [capitalGains, regularIncome]: TaxInfo[] = determineTaxBrackets(
     totalOwnedValue,
@@ -101,9 +101,9 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           <tbody>
             <tr>
               <td className="font-white">{finData.isoSharesToBuy}</td>
-              <td className="font-white">{`$${finData.isoPurchasePrice}`}</td>
+              <td className="font-white">{`$${finData.isoSharesToBuyPurchasePrice}`}</td>
               <td className="font-white">{finData.nsoSharesToBuy}</td>
-              <td className="font-white">{`$${finData.nsoPurchasePrice}`}</td>
+              <td className="font-white">{`$${finData.nsoSharesToBuyPurchasePrice}`}</td>
               <td className="font-white">
                 {`$${totalPurchasePrice.toFixed(2)}`}
               </td>

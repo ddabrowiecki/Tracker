@@ -29,7 +29,7 @@ const PriceSlider: FC<PriceSliderProps> = ({ toggleSlider, priceSliderValue, han
   };
 
   return (
-    <Box sx={{ width: 800, backgroundColor: "white", paddingLeft: "25px", paddingRight: "25px" }} className="mt-20 border-radius-5">
+    <Box sx={{ width: 650, backgroundColor: "white", paddingLeft: "25px", paddingRight: "25px" }} className="mt-20 border-radius-5">
       <Slider
         aria-label="Price Slider"
         step={0.5}
