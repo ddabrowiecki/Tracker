@@ -112,6 +112,9 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           </tbody>
         </table>
       </div>
+      <div className="font-mouldyCheese font-white mt-20 font-30 ml-30">
+        <p>Estimated Tax Burden</p>
+      </div>
       <div className="mb-40 ml-30">
         <table className="font-mouldyCheese">
           <thead>

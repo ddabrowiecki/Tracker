@@ -6,6 +6,7 @@ import PriceSlider from "./components/Slider";
 import EnableSliderButton from "./components/EnableSliderButton";
 import UpdatedPrice from "./components/UpdatedPrice";
 import FinancialInfoModal from "./components/FinancialInfoModal";
+import Link from "next/link";
 
 type StockData = string[];
 
@@ -123,10 +124,10 @@ export default function Home() {
   const closeModal = (finData: FinData) => {
     setFinData(finData);
     setModalOpen(false);
-  }
+  };
 
   return modalOpen ? (
-    <FinancialInfoModal open={modalOpen} closeModal={closeModal}/>
+    <FinancialInfoModal open={modalOpen} closeModal={closeModal} />
   ) : (
     <>
       <div className="flex jc-center">
@@ -161,6 +162,9 @@ export default function Home() {
       {finData !== undefined && (
         <Table finData={finData} stockPrice={stockPrice} />
       )}
+      <div className="flex jc-center">
+        <Link href="/terms-of-use">Terms Of Use</Link>
+      </div>
     </>
   );
 }

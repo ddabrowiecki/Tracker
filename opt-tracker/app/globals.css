@@ -192,3 +192,17 @@ input {
   font-family:"Arial, Helvetica, sans-serif";
   padding-left: 10px;
 }
+
+.terms-of-use {
+  color: rgb(var(--black));
+  background-color: rgb(var(--white));
+  max-width: 500px;
+  text-align: center;
+}
+
+.terms-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
