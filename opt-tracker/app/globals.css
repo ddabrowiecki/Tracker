@@ -198,6 +198,7 @@ input {
   background-color: rgb(var(--white));
   max-width: 500px;
   text-align: center;
+  padding: 10px;
 }
 
 .terms-container {
