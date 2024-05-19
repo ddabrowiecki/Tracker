@@ -104,7 +104,7 @@ export const determineTaxBrackets = (
   const capGains: TaxInfo = {} as TaxInfo;
   const regIncome: TaxInfo = {} as TaxInfo;
   Object.values(taxBrackets.capitalGains[filingStatus]).forEach((bracket) => {
-    if (totalIncome >= bracket[0] && totalIncome <= bracket[1]) {
+    if (totalOwnedValue >= bracket[0] && totalOwnedValue <= bracket[1]) {
       capGains.tax = totalOwnedValue * bracket[2];
       capGains.rate = bracket[3];
       capGains.range = bracket[4];

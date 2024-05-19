@@ -21,6 +21,22 @@
       "@/*": ["./*"]
     }
   },
+  "types": ["@testing-library/jest-native", "jest", "node"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../backend/sheetConsumer.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "es2017",
+//     // "module": "commonjs",
+//     "moduleResolution": "node",
+
+//     "jsx": "react-jsx",
+//     "paths": {
+//       "test-utils": ["./utils/test-utils"]
+//     },
+//     "types": ["@testing-library/jest-native", "jest", "node"]
+//   },
+//   "extends": "expo/tsconfig.base"
+// }
