@@ -1,7 +1,4 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
 import { determineTaxBrackets } from "../utils"
-import { after } from "node:test";
 
 // Assuming the following data:
 // Stock Price: $50
