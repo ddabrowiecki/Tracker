@@ -1,42 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./*"]
-    }
-  },
-  "types": ["@testing-library/jest-native", "jest", "node"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../backend/sheetConsumer.js"],
-  "exclude": ["node_modules"],
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+  }
 }
-
-// {
-//   "compilerOptions": {
-//     "target": "es2017",
-//     // "module": "commonjs",
-//     "moduleResolution": "node",
-
-//     "jsx": "react-jsx",
-//     "paths": {
-//       "test-utils": ["./utils/test-utils"]
-//     },
-//     "types": ["@testing-library/jest-native", "jest", "node"]
-//   },
-//   "extends": "expo/tsconfig.base"
-// }
