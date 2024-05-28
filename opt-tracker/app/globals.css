@@ -191,6 +191,7 @@ input {
   color: rgb(var(--black));
   font-family:"Arial, Helvetica, sans-serif";
   padding-left: 10px;
+  max-width: 50%;
 }
 
 .terms-of-use {
@@ -210,4 +211,9 @@ input {
 
 .max-w-40 {
   max-width: 40%;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }

@@ -19,8 +19,10 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
   const [isoPurchasePrice, setIsoPurchasePrice] = useState<number>(0);
   const [isoSharesToBuy, setIsoSharesToBuy] = useState<number>(0);
   const [nsoSharesToBuy, setNsoSharesToBuy] = useState<number>(0);
-  const [isoSharesToBuyPurchasePrice, setIsoSharesToBuyPurchasePrice] = useState<number>(0);
-  const [nsoSharesToBuyPurchasePrice, setNsoSharesToBuyPurchasePrice] = useState<number>(0);
+  const [isoSharesToBuyPurchasePrice, setIsoSharesToBuyPurchasePrice] =
+    useState<number>(0);
+  const [nsoSharesToBuyPurchasePrice, setNsoSharesToBuyPurchasePrice] =
+    useState<number>(0);
   const [estimatedSalary, setEstimatedSalary] = useState<number>(0);
   const [filingStatus, setFilingStatus] = useState<string>("single");
 
@@ -51,7 +53,6 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
   const cleanInput = (amount: string) => {
     return parseFloat(amount.replace(/[$,]/g, ""));
   };
-
   return (
     <Modal open={open}>
       <Box>
@@ -63,94 +64,118 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
         </div>
         <div className="flex space-around font-mouldyCheese mt-20">
           <div>
-            <p>Enter ISOs Owned:</p>
-            <input
-              type="text"
-              onChange={(e) => setIsosOwned(cleanInput(e.target.value))}
-            />
-            <p className="mt-5">How much did you pay for these ISOs?</p>
-            <input
-              type="text"
-              onChange={(e) => setIsoPurchasePrice(cleanInput(e.target.value))}
-            />
+            <label>
+              Enter ISOs Owned:
+              <input
+                type="text"
+                onChange={(e) => setIsosOwned(cleanInput(e.target.value))}
+              />
+            </label>
+            <label className="mt-5">
+              How much did you pay for these ISOs?
+              <input
+                type="text"
+                onChange={(e) =>
+                  setIsoPurchasePrice(cleanInput(e.target.value))
+                }
+              />
+            </label>
           </div>
           <div>
-            <p>Enter NSOs Owned:</p>
-            <input
-              type="text"
-              onChange={(e) => setNsosOwned(cleanInput(e.target.value))}
-            />
+            <label>
+              Enter NSOs Owned:
+              <input
+                type="text"
+                onChange={(e) => setNsosOwned(cleanInput(e.target.value))}
+              />
+            </label>
           </div>
           <div>
-            <p>Enter RSUs Owned:</p>
-            <input
-              type="text"
-              onChange={(e) => setRsusOwned(cleanInput(e.target.value))}
-            />
+            <label>
+              Enter RSUs Owned:
+              <input
+                type="text"
+                onChange={(e) => setRsusOwned(cleanInput(e.target.value))}
+              />
+            </label>
           </div>
         </div>
         <div className="flex space-around font-mouldyCheese mt-40 ml-30">
           <div>
-            <p>How many ISOs do you have left?</p>
-            <input
-              type="text"
-              onChange={(e) => setIsoSharesToBuy(cleanInput(e.target.value))}
-            />
-            <p className="mt-5">
-              What total do you need to pay to buy your ISOs?
-            </p>
-            <input
-              type="text"
-              onChange={(e) => setIsoSharesToBuyPurchasePrice(cleanInput(e.target.value))}
-            />
-            <div className="mt-40">
-              <p>{`How much do you plan to make this year (income without stock options)?`}</p>
+            <label>
+              How many ISOs do you have left?
               <input
                 type="text"
-                onChange={(e) => setEstimatedSalary(cleanInput(e.target.value))}
+                onChange={(e) => setIsoSharesToBuy(cleanInput(e.target.value))}
               />
+            </label>
+            <label className="mt-5">
+              What total do you need to pay to buy your ISOs?
+              <input
+                type="text"
+                onChange={(e) =>
+                  setIsoSharesToBuyPurchasePrice(cleanInput(e.target.value))
+                }
+              />
+            </label>
+            <div className="mt-40">
+              <label>
+                How much do you plan to make this year (income without stock options)?
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    setEstimatedSalary(cleanInput(e.target.value))
+                  }
+                />
+              </label>
             </div>
           </div>
           <div>
-            <p>How many NSOs do you have left?</p>
-            <input
-              type="text"
-              onChange={(e) => setNsoSharesToBuy(cleanInput(e.target.value))}
-            />
-            <p className="mt-5">
+            <label>
+              How many NSOs do you have left?
+              <input
+                type="text"
+                onChange={(e) => setNsoSharesToBuy(cleanInput(e.target.value))}
+              />
+            </label>
+            <label  className="mt-5">
               What total do you need to pay to buy your NSOs?
-            </p>
-            <input
-              type="text"
-              onChange={(e) => setNsoSharesToBuyPurchasePrice(cleanInput(e.target.value))}
-            />
+              <input
+                type="text"
+                onChange={(e) =>
+                  setNsoSharesToBuyPurchasePrice(cleanInput(e.target.value))
+                }
+              />
+            </label>
             <div className="mt-40">
-              <p>{`What is your tax filing status?`}</p>
-              <Box className="mt-5">
-                <FormControl fullWidth>
-                  <Select
-                    color="warning"
-                    style={{
-                      backgroundColor: "white",
-                      maxHeight: "30px",
-                      maxWidth: "200px",
-                    }}
-                    value={filingStatus}
-                    onChange={handleSelectChange}
-                  >
-                    <MenuItem value="single">Single</MenuItem>
-                    <MenuItem value="marriedFilingJointly">
-                      Married Filing Jointly
-                    </MenuItem>
-                    <MenuItem value="marriedFilingSeparately">
-                      Married Filing Separately
-                    </MenuItem>
-                    <MenuItem value="headOfHousehold">
-                      Head of Household
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Box>
+              <label>
+                What is your tax filing status?
+                <Box className="mt-5">
+                  <FormControl fullWidth>
+                    <Select
+                      color="warning"
+                      style={{
+                        backgroundColor: "white",
+                        maxHeight: "30px",
+                        maxWidth: "200px",
+                      }}
+                      value={filingStatus}
+                      onChange={handleSelectChange}
+                    >
+                      <MenuItem value="single">Single</MenuItem>
+                      <MenuItem value="marriedFilingJointly">
+                        Married Filing Jointly
+                      </MenuItem>
+                      <MenuItem value="marriedFilingSeparately">
+                        Married Filing Separately
+                      </MenuItem>
+                      <MenuItem value="headOfHousehold">
+                        Head of Household
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </label>
             </div>
           </div>
         </div>
