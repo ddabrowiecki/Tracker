@@ -17,6 +17,29 @@ A node.js backend was created in order to keep Google credentials private when c
 # Frontend
 
 A Next JS application written using React was created. This application calls the backend upon loading to get the stock data. A user is originally prompted to enter in their stock option information in a modal. When submitted, the necessary calculations are made to populate the tables. A chart was included on the page, created using Chart.js. Several UI components were created using Material UI, including the Slider and Modal.
+
+# Requirements
+- npm
+- node.js
+
+# Running Reddit Tracker Locally
+
+Open two terminal windows. In one, run the following commands:
+
+```
+cd backend
+node app.js
+```
+
+In the other, run:
+
+```
+cd opt-tracker
+npm run dev
+```
+
+The website should now be available locally at [http://localhost:3000](http://localhost:3000)
+
 # Contact
 
 Email: `ddabrowiecki@yahoo.com`
