@@ -24,7 +24,9 @@ A Next JS application written using React was created. This application calls th
 
 # Running Reddit Tracker Locally
 
-Open two terminal windows. In one, run the following commands:
+Fork the repo.
+
+Open two terminal windows and cd to the root folder in both. In one, run the following commands:
 
 ```
 cd backend
