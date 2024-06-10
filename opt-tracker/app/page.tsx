@@ -32,7 +32,7 @@ export interface GraphData {
   price: number;
 }
 
-const nodeBackend = "http://localhost:5000";
+const nodeBackend = "https://reddit-tracker.onrender.com";
 
 export default function Home() {
   const [data, setData] = useState<DataFromApi>({} as DataFromApi);
