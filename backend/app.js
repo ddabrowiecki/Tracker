@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 const app = express();
 const port = process.env.PORT || 5000;
+const host = process.env.HOST || 'localhost';
 app.use(cors());
 
 app.get("/", async (req, res) => {
@@ -13,6 +14,6 @@ app.get("/", async (req, res) => {
   return res.send({ data: values, finData: JSON.parse(process.env.FIN_INFO) });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at port: ${port}`);
+app.listen(port, host, () => {
+  console.log(`App is running on: ${host}:${port}`);
 });
