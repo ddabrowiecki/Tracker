@@ -1,5 +1,6 @@
 {
-  "name": "opt-tracker",
+  "name": "reddit-tracker",
+  "homepage": "http://reddit-tracker.funsizehistory.com/",
   "version": "0.1.0",
   "private": true,
   "type": "commonjs",
