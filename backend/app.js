@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get("/", async (req, res) => {
   const values = await getTrackerValues();
-  return res.send({ data: values, finData: JSON.parse(process.env.FIN_INFO) });
+  return res.send({ data: values });
 });
 
 app.listen(port, host, () => {
