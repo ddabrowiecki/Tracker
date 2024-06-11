@@ -37,6 +37,7 @@ body {
 .modal {
   color: rgb(var(--orange-red));
   background-color: rgb(var(--foreground-rgb));
+  padding: 10px;
 }
 
 .font-white {
@@ -216,4 +217,23 @@ input {
 label {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 900px) {
+  .modal {
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .welcome-title {
+    font-size: 30px;
+  }
+  label {
+    font-size: 14px;
+  }
+  .modal-box {
+    display: block;
+    margin-left: 0px;
+  }
 }

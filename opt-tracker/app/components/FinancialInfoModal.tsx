@@ -54,15 +54,15 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
     return parseFloat(amount.replace(/[$,]/g, ""));
   };
   return (
-    <Modal open={open}>
+    <Modal open={open} className="modal">
       <Box>
-        <div className="flex jc-center font-kadoku font-60">
+        <div className="welcome-title flex jc-center font-kadoku font-60">
           <p>Welcome to Reddit Tracker!</p>
         </div>
         <div className="flex ai-center font-mouldyCheese flex-column mt-20">
           <p>Let's start by getting some of your stock information!</p>
         </div>
-        <div className="flex space-around font-mouldyCheese mt-20">
+        <div className="modal-box flex space-around font-mouldyCheese mt-20">
           <div>
             <label>
               Enter ISOs Owned:
@@ -100,7 +100,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
             </label>
           </div>
         </div>
-        <div className="flex space-around font-mouldyCheese mt-40 ml-30">
+        <div className="modal-box flex space-around font-mouldyCheese mt-40 ml-30">
           <div>
             <label>
               How many ISOs do you have left?
