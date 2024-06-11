@@ -55,7 +55,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
   };
   return (
     <Modal open={open} className="modal">
-      <Box>
+      <Box className="modal-contents">
         <div className="welcome-title flex jc-center font-kadoku font-60">
           <p>Welcome to Reddit Tracker!</p>
         </div>

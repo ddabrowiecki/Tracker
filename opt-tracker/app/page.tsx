@@ -132,18 +132,18 @@ export default function Home() {
   ) : (
     <>
       <div className="flex jc-center">
-        <h2 className="font-kadoku font-60">Reddit Tracker</h2>
+        <h2 className="main-title font-kadoku font-60">Reddit Tracker</h2>
       </div>
       <div className="top-container flex space-around">
-        <div className="info-container font-mouldyCheese font-30">
+        <div className="info-container font-mouldyCheese normal-font ">
           <div>Today's Date:</div>
           <div className="font-white">{dateString}</div>
-          <div className="mt-20">Current Share Price:</div>
+          <div className="current-share-price mt-20">Current Share Price:</div>
           <div className="font-white">{`$${staticStockPrice.toFixed(2)}`}</div>
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
-      <div className="flex ai-flex-end flex-column width-95">
+      <div className="slider-container flex ai-flex-end flex-column width-95">
         <EnableSliderButton handleEnableSlider={handleEnableSlider} />
         <PriceSlider
           priceSliderValue={priceSlider}
