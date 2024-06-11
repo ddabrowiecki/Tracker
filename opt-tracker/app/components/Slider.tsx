@@ -41,6 +41,7 @@ const PriceSlider: FC<PriceSliderProps> = ({ toggleSlider, priceSliderValue, han
         valueLabelDisplay="on"
         onChange={handleChange}
         disabled={!toggleSlider}
+        size="small"
       />
     </Box>
   );

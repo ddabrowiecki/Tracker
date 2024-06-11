@@ -301,4 +301,10 @@ label {
   .terms-of-use {
     margin: 20px;
   }
+
+  .updated-price {
+    width: 100%;
+    justify-content: center;
+  }
+
 }
