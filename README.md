@@ -26,14 +26,9 @@ A Next JS application written using React was created. This application calls th
 
 Fork the repo.
 
-Open two terminal windows and cd to the root folder in both. In one, run the following commands:
+Open a terminal window. The current version of the front end points to a node.js backend hosted at `render.com`, so you will only run the frontend locally.
 
-```
-cd backend
-node app.js
-```
-
-In the other, run:
+Run the following commands in the terminal:
 
 ```
 cd opt-tracker
