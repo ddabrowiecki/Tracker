@@ -227,6 +227,10 @@ label {
   width: 600px;
 }
 
+.bottom-text {
+  font-size: 15px;
+}
+
 /* Mobile settings */
 
 @media screen and (max-width: 415px) {
@@ -241,7 +245,7 @@ label {
     margin-left: 0px;
   }
 
-  .font-white, table, .tax-bracket-container, .normal-font {
+  .font-white, table, .tax-bracket-container, .normal-font, .bottom-text {
     font-size: 12px;
   }
 
@@ -292,5 +296,9 @@ label {
   .chart-container {
     height: 200px;
     width: 350px;
+  }
+
+  .terms-of-use {
+    margin: 20px;
   }
 }
