@@ -13,30 +13,34 @@ interface ModalProps {
 }
 
 const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
-  const [rsusOwned, setRsusOwned] = useState<number>(0);
-  const [nsosOwned, setNsosOwned] = useState<number>(0);
-  const [isosOwned, setIsosOwned] = useState<number>(0);
-  const [isoPurchasePrice, setIsoPurchasePrice] = useState<number>(0);
-  const [isoSharesToBuy, setIsoSharesToBuy] = useState<number>(0);
-  const [nsoSharesToBuy, setNsoSharesToBuy] = useState<number>(0);
+  const [rsusOwned, setRsusOwned] = useState<string>("");
+  const [nsosOwned, setNsosOwned] = useState<string>("");
+  const [isosOwned, setIsosOwned] = useState<string>("");
+  const [isoPurchasePrice, setIsoPurchasePrice] = useState<string>("");
+  const [isoSharesToBuy, setIsoSharesToBuy] = useState<string>("");
+  const [nsoSharesToBuy, setNsoSharesToBuy] = useState<string>("");
   const [isoSharesToBuyPurchasePrice, setIsoSharesToBuyPurchasePrice] =
-    useState<number>(0);
+    useState<string>("");
   const [nsoSharesToBuyPurchasePrice, setNsoSharesToBuyPurchasePrice] =
-    useState<number>(0);
-  const [estimatedSalary, setEstimatedSalary] = useState<number>(0);
+    useState<string>("");
+  const [estimatedSalary, setEstimatedSalary] = useState<string>("");
   const [filingStatus, setFilingStatus] = useState<string>("single");
 
   const mapToFinData = () => {
     const finData = {} as FinData;
-    finData.rsusOwned = rsusOwned;
-    finData.nsosOwned = nsosOwned;
-    finData.isosOwned = isosOwned;
-    finData.isoPurchasePrice = isoPurchasePrice;
-    finData.isoSharesToBuy = isoSharesToBuy;
-    finData.nsoSharesToBuy = nsoSharesToBuy;
-    finData.isoSharesToBuyPurchasePrice = isoSharesToBuyPurchasePrice;
-    finData.nsoSharesToBuyPurchasePrice = nsoSharesToBuyPurchasePrice;
-    finData.estimatedSalary = estimatedSalary;
+    finData.rsusOwned = cleanInput(rsusOwned) || 0;
+    finData.nsosOwned = cleanInput(nsosOwned) || 0;
+    finData.isosOwned = cleanInput(isosOwned) || 0;
+    finData.isoPurchasePrice = cleanInput(isoPurchasePrice) || 0;
+    finData.isoSharesToBuy = cleanInput(isoSharesToBuy) || 0;
+    finData.nsoSharesToBuy = cleanInput(nsoSharesToBuy) || 0;
+    finData.isoSharesToBuyPurchasePrice = cleanInput(
+      isoSharesToBuyPurchasePrice
+    ) || 0;
+    finData.nsoSharesToBuyPurchasePrice = cleanInput(
+      nsoSharesToBuyPurchasePrice
+    ) || 0;
+    finData.estimatedSalary = cleanInput(estimatedSalary) || 0;
     finData.filingStatus = filingStatus;
     return finData;
   };
@@ -50,9 +54,20 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
     setFilingStatus(event.target.value as string);
   };
 
+  const validateInput = (setter, amount: string) => {
+    if (/\D+/.test(amount)) {
+      alert("Please enter only numerical amounts");
+      setter("");
+      return false;
+    } else {
+      setter(amount);
+    }
+  };
+
   const cleanInput = (amount: string) => {
     return parseFloat(amount.replace(/[$,]/g, ""));
   };
+
   return (
     <Modal open={open} className="modal">
       <Box className="modal-contents">
@@ -68,15 +83,17 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               Enter ISOs Owned:
               <input
                 type="text"
-                onChange={(e) => setIsosOwned(cleanInput(e.target.value))}
+                value={isosOwned}
+                onChange={(e) => validateInput(setIsosOwned, e.target.value)}
               />
             </label>
             <label className="mt-5">
               How much did you pay for these ISOs?
               <input
                 type="text"
+                value={isoPurchasePrice}
                 onChange={(e) =>
-                  setIsoPurchasePrice(cleanInput(e.target.value))
+                  validateInput(setIsoPurchasePrice, e.target.value)
                 }
               />
             </label>
@@ -86,7 +103,8 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               Enter NSOs Owned:
               <input
                 type="text"
-                onChange={(e) => setNsosOwned(cleanInput(e.target.value))}
+                value={nsosOwned}
+                onChange={(e) => validateInput(setNsosOwned, e.target.value)}
               />
             </label>
           </div>
@@ -95,7 +113,8 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               Enter RSUs Owned:
               <input
                 type="text"
-                onChange={(e) => setRsusOwned(cleanInput(e.target.value))}
+                value={rsusOwned}
+                onChange={(e) => validateInput(setRsusOwned, e.target.value)}
               />
             </label>
           </div>
@@ -106,25 +125,31 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               How many ISOs do you have left?
               <input
                 type="text"
-                onChange={(e) => setIsoSharesToBuy(cleanInput(e.target.value))}
+                value={isoSharesToBuy}
+                onChange={(e) =>
+                  validateInput(setIsoSharesToBuy, e.target.value)
+                }
               />
             </label>
             <label className="mt-5">
               What total do you need to pay to buy your ISOs?
               <input
                 type="text"
+                value={isoSharesToBuyPurchasePrice}
                 onChange={(e) =>
-                  setIsoSharesToBuyPurchasePrice(cleanInput(e.target.value))
+                  validateInput(setIsoSharesToBuyPurchasePrice, e.target.value)
                 }
               />
             </label>
             <div className="mt-40">
               <label>
-                How much do you plan to make this year (income without stock options)?
+                How much do you plan to make this year (income without stock
+                options)?
                 <input
                   type="text"
+                  value={estimatedSalary}
                   onChange={(e) =>
-                    setEstimatedSalary(cleanInput(e.target.value))
+                    validateInput(setEstimatedSalary, e.target.value)
                   }
                 />
               </label>
@@ -135,15 +160,19 @@ const FinancialInfoModal: FC<ModalProps> = ({ open, closeModal }) => {
               How many NSOs do you have left?
               <input
                 type="text"
-                onChange={(e) => setNsoSharesToBuy(cleanInput(e.target.value))}
+                value={nsoSharesToBuy}
+                onChange={(e) =>
+                  validateInput(setNsoSharesToBuy, e.target.value)
+                }
               />
             </label>
-            <label  className="mt-5">
+            <label className="mt-5">
               What total do you need to pay to buy your NSOs?
               <input
                 type="text"
+                value={nsoSharesToBuyPurchasePrice}
                 onChange={(e) =>
-                  setNsoSharesToBuyPurchasePrice(cleanInput(e.target.value))
+                  validateInput(setNsoSharesToBuyPurchasePrice, e.target.value)
                 }
               />
             </label>
