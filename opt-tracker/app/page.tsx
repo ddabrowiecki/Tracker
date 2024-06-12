@@ -7,6 +7,8 @@ import EnableSliderButton from "./components/EnableSliderButton";
 import UpdatedPrice from "./components/UpdatedPrice";
 import FinancialInfoModal from "./components/FinancialInfoModal";
 import Link from "next/link";
+import Image from "next/image";
+import refreshIcon from "../public/refresh-svgrepo-com.svg";
 
 type StockData = string[];
 
@@ -135,11 +137,33 @@ export default function Home() {
         <h2 className="main-title font-kadoku font-60">Reddit Tracker</h2>
       </div>
       <div className="top-container flex space-around">
-        <div className="info-container font-mouldyCheese normal-font ">
-          <div>Today's Date:</div>
-          <div className="font-white">{dateString}</div>
-          <div className="current-share-price mt-20">Current Share Price:</div>
-          <div className="font-white">{`$${staticStockPrice.toFixed(2)}`}</div>
+        <div className="info-container">
+          <div className="font-mouldyCheese normal-font ">
+            <div>Today's Date:</div>
+            <div className="font-white">{dateString}</div>
+            <div className="current-share-price mt-20">
+              Current Share Price:
+            </div>
+            <div className="font-white">{`$${staticStockPrice.toFixed(
+              2
+            )}`}</div>
+          </div>
+          <div className="reload-container mt-10">
+            <div
+              className="reload-button"
+              onClick={() => window.location.reload()}
+            >
+              <Image
+                priority
+                className="reload-icon"
+                src={refreshIcon}
+                alt="Re-enter Information"
+              />
+              <p className="font-white ml-10 font-mouldyCheese">
+                Re-enter Information
+              </p>
+            </div>
+          </div>
         </div>
         <Chart data={createGraphDataObject(graphData)} />
       </div>
@@ -168,7 +192,9 @@ export default function Home() {
           <Link href="/terms-of-use">Terms Of Use</Link>
         </div>
         <div className="github-link font-white">
-          <Link href="http://www.github.com/ddabrowiecki/Tracker">View project on GitHub</Link>
+          <Link href="http://www.github.com/ddabrowiecki/Tracker">
+            View project on GitHub
+          </Link>
         </div>
       </div>
     </>
