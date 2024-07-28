@@ -26,7 +26,6 @@ jobs:
         python-version: '3.12'
     - name: install python packages
       run:
-        pip install --upgrade install
         pip install requests google-api-python-client google-auth-httplib2 google-auth-oauthlib google-auth
     - name: call av api
       env:
