@@ -8,7 +8,7 @@ Given the 3 different types of stock options (NSOs, ISOs, and RSUs), their varyi
 
 ## Form to enter stock option information
 
-A user is first greeted by this page, prompting them to enter in their stock option information as well as tax bracket and expected income.
+A user is first greeted by this page, prompting them to enter in their stock option information as well as tax bracket and expected income. For the demo, we have simply invented the numbers to show the calculations.
 <img width="859" alt="Screenshot 2024-10-03 233557" src="https://github.com/user-attachments/assets/0ddcd6fe-79ec-4864-bb2c-8bd030540759">
 
 ## Main page
@@ -16,7 +16,8 @@ A user is first greeted by this page, prompting them to enter in their stock opt
 After clicking submit, the main page is displayed. First, a user sees the current stock price and a graph tracking the stock over time.
 <img width="879" alt="Screenshot 2024-10-03 233338" src="https://github.com/user-attachments/assets/e190d37c-eadc-41a4-95bb-f9cc1283b6a5">
 
-There is an option to enable a price slider to recalculate the table below, so that a user can understand the difference in tax burden based on a different stock price.
+There is an option to enable a price slider to recalculate the table below, so that a user can understand the difference in tax burden based on a different stock price.  
+
 <img width="503" alt="Screenshot 2024-10-03 233443" src="https://github.com/user-attachments/assets/773f2922-942b-410e-9d22-9d9ea542b279">
 
 ## The tax table
@@ -27,7 +28,7 @@ Here a user sees the rough calculation of taxes. The table is split up to help t
 
 ## The disclaimer
 
-Any public website related to financial calculations need a good disclaimer. Of course, this website does not constitute tax advice! 
+Any public website related to financial calculations needs a good disclaimer. Of course, this website does not constitute tax advice! 
 <img width="670" alt="Screenshot 2024-10-03 233811" src="https://github.com/user-attachments/assets/7c1bd16e-d2ae-4555-9ed9-ac32abf15560">
 
 
