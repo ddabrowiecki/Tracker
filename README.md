@@ -28,7 +28,8 @@ Here a user sees the rough calculation of taxes. The table is split up to help t
 
 ## The disclaimer
 
-Any public website related to financial calculations needs a good disclaimer. Of course, this website does not constitute tax advice! 
+Any public website related to financial calculations needs a good disclaimer. Of course, this website does not constitute tax advice!   
+
 <img width="670" alt="Screenshot 2024-10-03 233811" src="https://github.com/user-attachments/assets/7c1bd16e-d2ae-4555-9ed9-ac32abf15560">
 
 
