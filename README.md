@@ -4,6 +4,34 @@ This project arose out of a need to exercise stock options granted by a former e
 
 Given the 3 different types of stock options (NSOs, ISOs, and RSUs), their varying tax implications are taken into account and the appropriate calculations are made. The application also includes a graph with the historic stock data as well as a "price slider" so that a user can project at what price would be the ideal time to exercise, based on their individual financial situation.
 
+# Demo
+
+## Form to enter stock option information
+
+A user is first greeted by this page, prompting them to enter in their stock option information as well as tax bracket and expected income.
+<img width="859" alt="Screenshot 2024-10-03 233557" src="https://github.com/user-attachments/assets/0ddcd6fe-79ec-4864-bb2c-8bd030540759">
+
+## Main page
+
+After clicking submit, the main page is displayed. First, a user sees the current stock price and a graph tracking the stock over time.
+<img width="879" alt="Screenshot 2024-10-03 233338" src="https://github.com/user-attachments/assets/e190d37c-eadc-41a4-95bb-f9cc1283b6a5">
+
+There is an option to enable a price slider to recalculate the table below, so that a user can understand the difference in tax burden based on a different stock price.
+<img width="503" alt="Screenshot 2024-10-03 233443" src="https://github.com/user-attachments/assets/773f2922-942b-410e-9d22-9d9ea542b279">
+
+## The tax table
+
+Here a user sees the rough calculation of taxes. The table is split up to help the user understand the value of currently owned stocks and the tax burden on stocks yet to be exercised (based on today's stock price).
+<img width="927" alt="Screenshot 2024-10-03 233656" src="https://github.com/user-attachments/assets/c2b65d93-f2f8-4ca8-a752-c7ab8efcd46a">
+<img width="932" alt="Screenshot 2024-10-03 233730" src="https://github.com/user-attachments/assets/6bcd5c40-a7ad-411f-878f-e9658260dea3">
+
+## The disclaimer
+
+Any public website related to financial calculations need a good disclaimer. Of course, this website does not constitute tax advice! 
+<img width="670" alt="Screenshot 2024-10-03 233811" src="https://github.com/user-attachments/assets/7c1bd16e-d2ae-4555-9ed9-ac32abf15560">
+
+
+
 # Structure of the Application
 
 ## Acquiring the Stock Information
