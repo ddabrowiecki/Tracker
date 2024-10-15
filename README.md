@@ -1,5 +1,7 @@
 # Reddit Tracker
 
+[Visit Reddit Tracker](http://reddit-tracker.vercel.app)
+
 This project arose out of a need to exercise stock options granted by a former employer. The application tracks the price of Reddit's stock price, and allows a user to enter in a variety of financial information. With this information, calculations are performed to help the user understand the value of their options and the approximate tax burden related to their sale.
 
 Given the 3 different types of stock options (NSOs, ISOs, and RSUs), their varying tax implications are taken into account and the appropriate calculations are made. The application also includes a graph with the historic stock data as well as a "price slider" so that a user can project at what price would be the ideal time to exercise, based on their individual financial situation.
