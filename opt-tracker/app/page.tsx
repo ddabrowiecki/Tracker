@@ -9,30 +9,7 @@ import FinancialInfoModal from "./components/FinancialInfoModal";
 import Link from "next/link";
 import Image from "next/image";
 import refreshIcon from "../public/refresh-svgrepo-com.svg";
-
-type StockData = string[];
-
-interface DataFromApi {
-  stockData: StockData[];
-}
-
-export interface FinData {
-  rsusOwned: number;
-  nsosOwned: number;
-  isosOwned: number;
-  isoPurchasePrice: number;
-  estimatedSalary: number;
-  isoSharesToBuy: number;
-  nsoSharesToBuy: number;
-  isoSharesToBuyPurchasePrice: number;
-  nsoSharesToBuyPurchasePrice: number;
-  filingStatus: string;
-}
-
-export interface GraphData {
-  date: string;
-  price: number;
-}
+import { DataFromApi, FinData, StockData, GraphData } from "./types";
 
 const nodeBackend = "https://reddit-tracker.onrender.com";
 

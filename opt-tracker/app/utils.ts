@@ -1,24 +1,4 @@
-type TaxBracketInfo = [number, number, number, string, string];
-
-interface TaxBracketObject {
-  [bracketString: string]: TaxBracketInfo;
-}
-
-interface TaxTypeBrackets {
-  [filingStatus: string]: TaxBracketObject;
-}
-
-interface TaxBracketMaster {
-  capitalGains: TaxTypeBrackets;
-  regularIncome: TaxTypeBrackets;
-}
-
-export interface TaxInfo {
-  rate: string;
-  range: string;
-  tax: number;
-  totalAfterTax: number;
-}
+import { TaxBracketMaster, TaxInfo, FinData } from "./types";
 
 export const mapToNameString = (key: string) => {
   switch (key) {
@@ -120,4 +100,46 @@ export const determineTaxBrackets = (
   });
 
   return [capGains, regIncome];
+};
+
+export const validateInput = (setter, amount: string) => {
+  if (/\D+/.test(amount)) {
+    alert("Please enter only numerical amounts");
+    setter("");
+    return false;
+  } else {
+    setter(amount);
+  }
+};
+
+export const cleanInput = (amount: string) => {
+  return parseFloat(amount.replace(/[$,]/g, ""));
+};
+
+export const mapToFinData = ({
+  rsusOwned,
+  nsosOwned,
+  isosOwned,
+  isoPurchasePrice,
+  isoSharesToBuy,
+  nsoSharesToBuy,
+  isoSharesToBuyPurchasePrice,
+  estimatedSalary,
+  filingStatus,
+  nsoSharesToBuyPurchasePrice,
+}) => {
+  const finData = {} as FinData;
+  finData.rsusOwned = cleanInput(rsusOwned) || 0;
+  finData.nsosOwned = cleanInput(nsosOwned) || 0;
+  finData.isosOwned = cleanInput(isosOwned) || 0;
+  finData.isoPurchasePrice = cleanInput(isoPurchasePrice) || 0;
+  finData.isoSharesToBuy = cleanInput(isoSharesToBuy) || 0;
+  finData.nsoSharesToBuy = cleanInput(nsoSharesToBuy) || 0;
+  finData.isoSharesToBuyPurchasePrice =
+    cleanInput(isoSharesToBuyPurchasePrice) || 0;
+  finData.nsoSharesToBuyPurchasePrice =
+    cleanInput(nsoSharesToBuyPurchasePrice) || 0;
+  finData.estimatedSalary = cleanInput(estimatedSalary) || 0;
+  finData.filingStatus = filingStatus;
+  return finData;
 };
