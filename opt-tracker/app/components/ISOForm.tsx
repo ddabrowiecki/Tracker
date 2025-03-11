@@ -1,5 +1,5 @@
 import { validateInput } from "app/utils";
-import React, { FC, useState } from "react";
+import React from "react";
 
 const ISOForm = ({
   isosOwned,
@@ -12,7 +12,7 @@ const ISOForm = ({
   setIsoSharesToBuyPurchasePrice,
 }) => {
   return (
-    <div className="modal-box flex space-around font-mouldyCheese mt-20">
+    <div className="modal-box font-mouldyCheese">
       <div>
         <label>
           Enter ISOs Owned:

@@ -4,8 +4,7 @@
 
 :root {
   --foreground-rgb: 6, 44, 105;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --gradient-end-color: 61, 138, 153;
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --orange-red: 255, 86, 0;
@@ -14,8 +13,6 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
@@ -29,11 +26,17 @@
   src: url('../fonts/MouldyCheeseRegular-WyMWG.ttf'),
 }
 
-body {
-  color: rgb(var(--orange-red));
+.gradient-background {
+  height: 600px;
+  background: url("../../opt-tracker/public/editedSnoo.gif"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background-size: 200px, 1500px;
+  background-repeat: no-repeat;
+  background-position: 48% 40%;
+}
+
+.gradient-background-main-page {
   background-color: rgb(var(--foreground-rgb));
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-image: linear-gradient(to bottom right,rgba(var(--foreground-rgb)), rgba(var(--gradient-end-color)));
 }
 
 .modal {
@@ -50,12 +53,6 @@ body {
 
 .font-orange-red {
   color: rgb(var(--orange-red))
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
 
 table {
@@ -86,6 +83,10 @@ table {
   justify-content: space-around;
 }
 
+.ml-360 {
+  margin-left: 360px;
+}
+
 .ml-10 {
   margin-left: 10px;
 }
@@ -110,10 +111,6 @@ table {
   margin-top: 40px;
 }
 
-.mt-60 {
-  margin-top: 60px;
-}
-
 .mb-40 {
   margin-bottom: 40px;
 }
@@ -134,12 +131,20 @@ table {
   margin-left: 30px;
 }
 
+.ml-100 {
+  margin-left: 100px;
+}
+
 .jc-flex-start {
   justify-content: flex-start;
 }
 
 .jc-flex-end {
   justify-content: flex-end;
+}
+
+.ai-flex-start {
+  align-items: flex-start;
 }
 
 .ai-flex-end {
@@ -182,6 +187,10 @@ table {
   width: 95%;
 }
 
+.width-1000 {
+  width: 1000px;
+}
+
 .border-radius-5 {
   border-radius: 5px;
 }
@@ -221,6 +230,8 @@ input {
 label {
   display: flex;
   flex-direction: column;
+  white-space: pre-wrap;
+  margin-top: 10px;
 }
 
 .slider {
@@ -348,5 +359,4 @@ label {
     width: 15px;
     height: 15px;
   }
-
 }

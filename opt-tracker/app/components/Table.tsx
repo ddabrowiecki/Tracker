@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
-import { FinData } from "../page";
-import { determineTaxBrackets, mapToNameString, TaxInfo } from "../utils";
+import { FinData, TaxInfo } from "app/types";
+import { determineTaxBrackets, mapToNameString} from "../utils";
 
 interface TableProps {
   finData: FinData;
@@ -43,7 +43,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
         <div className="flex space-around ai-center mobile-flex-column mt-10">
           <table className="table font-mouldyCheese width-60">
             <thead>
-              <tr>
+              <tr className="font-orange-red">
                 <th>RSUs Owned</th>
                 <th>NSOs Owned</th>
                 <th>ISOs Owned</th>
@@ -70,7 +70,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
               </tr>
             </tbody>
           </table>
-          <div className="tax-bracket-container font-mouldyCheese">
+          <div className="tax-bracket-container font-mouldyCheese font-orange-red">
             <div className="estimated-tax-brackets font-20">
               Estimated Tax Bracket
             </div>
@@ -94,7 +94,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           <p>Money you will pay to buy options and their value</p>
         </div>
         <div className="table-level-two flex ai-center mb-40 mt-10 ml-30">
-          <table className="table ml-10 font-mouldyCheese">
+          <table className="table ml-10 font-mouldyCheese font-orange-red">
             <thead>
               <tr>
                 <th>ISOs to Buy</th>
@@ -125,7 +125,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           <p>Estimated Tax Burden</p>
         </div>
         <div className="mb-40 ml-30 mt-10 flex space-between mobile-flex-column">
-          <table className="font-mouldyCheese">
+          <table className="font-mouldyCheese font-orange-red">
             <thead>
               <tr>
                 <th>Estimated 2024 Salary</th>

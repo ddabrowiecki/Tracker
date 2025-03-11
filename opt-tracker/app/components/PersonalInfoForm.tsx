@@ -15,8 +15,8 @@ const PersonalInfoForm = ({
     setFilingStatus(event.target.value as string);
   };
   return (
-    <>
-      <div className="mt-40">
+    <div className="font-mouldyCheese font-white flex mt-20">
+      <div>
         <label>
           What is your tax filing status?
           <Box className="mt-5">
@@ -44,9 +44,10 @@ const PersonalInfoForm = ({
           </Box>
         </label>
       </div>
-      <div className="mt-40">
+      <div className="ml-360">
         <label>
-          How much do you plan to make this year (income without stock options)?
+          <span>How much do you plan to make this year </span>
+          <span>(income without stock options)?</span>
           <input
             type="text"
             value={estimatedSalary}
@@ -54,7 +55,7 @@ const PersonalInfoForm = ({
           />
         </label>
       </div>
-    </>
+    </div>
   );
 };
 

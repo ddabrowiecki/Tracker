@@ -10,7 +10,7 @@ const NSOForm = ({
   setNsoSharesToBuyPurchasePrice,
 }) => {
   return (
-    <div className="modal-box flex space-around font-mouldyCheese mt-40 ml-30">
+    <div className="modal-box font-mouldyCheese ml-30">
       <div>
         <label>
           Enter NSOs Owned:
@@ -20,8 +20,6 @@ const NSOForm = ({
             onChange={(e) => validateInput(setNsosOwned, e.target.value)}
           />
         </label>
-      </div>
-      <div>
         <label>
           How many NSOs do you have left?
           <input

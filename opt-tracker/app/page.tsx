@@ -107,18 +107,18 @@ export default function Home() {
   };
 
   return modalOpen ? (
-    <FinancialInfoModal open={modalOpen} closeModal={closeModal} />
+    <FinancialInfoModal closeModal={closeModal} />
   ) : (
-    <>
-      <div className="flex jc-center">
+    <div className="gradient-background-main-page">
+      <div className="flex jc-center font-orange-red">
         <h2 className="main-title font-kadoku font-60">Reddit Tracker</h2>
       </div>
       <div className="top-container flex space-around">
         <div className="info-container">
-          <div className="font-mouldyCheese normal-font ">
+          <div className="font-mouldyCheese normal-font font-orange-red">
             <div>Today's Date:</div>
             <div className="font-white">{dateString}</div>
-            <div className="current-share-price mt-20">
+            <div className="current-share-price mt-20 font-orange-red">
               Current Share Price:
             </div>
             <div className="font-white">{`$${staticStockPrice.toFixed(
@@ -174,6 +174,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
