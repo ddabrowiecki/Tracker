@@ -91,7 +91,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
         </div>
       </div>
 
-      <div className="flex jc-flex-end width-95">
+      <div className="flex jc-flex-end width-85">
         <Button
           onClick={handleSubmitInfo}
           color="warning"
