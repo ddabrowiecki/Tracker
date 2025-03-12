@@ -45,10 +45,10 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
   return (
     <div className="background-form">
       <div className="font-orange-red">
-        <div className="welcome-title flex jc-center font-kadoku font-60">
+        <div className="welcome-title flex jc-center font-kadoku font-60 mobile-text-center">
           <p>Welcome to Reddit Tracker!</p>
         </div>
-        <div className="flex jc-center ai-center font-mouldyCheese flex-row">
+        <div className="flex jc-center ai-center font-mouldyCheese flex-row info-request mobile-text-center">
           <p>Let's start by getting some of your stock information!</p>
           <Button
             className="ml-10"
@@ -58,8 +58,8 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
           ><Link href="/more-info">{`Learn More >`}</Link></Button>
         </div>
       </div>
-      <div className="flex font-white flex-column ai-center ml-100">
-        <div className="width-1000 flex jc-flex-start">
+      <div className="flex font-white flex-column ai-center form-input-container">
+        <div className="flex jc-flex-start form-category-box ">
           <PersonalInfoForm
             filingStatus={filingStatus}
             setFilingStatus={setFilingStatus}
@@ -67,7 +67,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
             setEstimatedSalary={setEstimatedSalary}
           />
         </div>
-        <div className="flex width-1000 mt-20">
+        <div className="flex mt-20 form-category-box form-box mobile-margin-top-spacing">
           <ISOForm
             isosOwned={isosOwned}
             setIsosOwned={setIsosOwned}
@@ -90,7 +90,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
         </div>
       </div>
 
-      <div className="flex jc-flex-end width-85">
+      <div className="flex jc-flex-end width-85 mobile-margin-top-spacing mb-40">
         <Button
           onClick={handleSubmitInfo}
           color="warning"

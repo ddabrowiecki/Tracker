@@ -10,7 +10,7 @@ const NSOForm = ({
   setNsoSharesToBuyPurchasePrice,
 }) => {
   return (
-    <div className="modal-box font-mouldyCheese ml-30">
+    <div className="nsos-owned font-mouldyCheese ml-30 mobile-margin-top-spacing">
       <div>
         <label>
           Enter NSOs Owned:

@@ -44,7 +44,7 @@ const PersonalInfoForm = ({
           </Box>
         </label>
       </div>
-      <div className="ml-360">
+      <div className="income">
         <label>
           <span>How much do you plan to make this year </span>
           <span>(income without stock options)?</span>

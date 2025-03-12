@@ -12,7 +12,7 @@ const ISOForm = ({
   setIsoSharesToBuyPurchasePrice,
 }) => {
   return (
-    <div className="modal-box font-mouldyCheese">
+    <div className="mobile-margin-top-spacing font-mouldyCheese">
       <div>
         <label>
           Enter ISOs Owned:

@@ -1,7 +1,7 @@
 import React from "react";
 
 const MoreInfo = () => (
-  <div className="terms-container background-extra-pages text-align-left ">
+  <div className="terms-container background-extra-pages text-align-left">
     <div className="terms-of-use">
       <div>
         <strong>WHAT THIS APP DOES:</strong> The application tracks Reddit's

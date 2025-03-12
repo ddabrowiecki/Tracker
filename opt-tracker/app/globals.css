@@ -47,7 +47,6 @@
   background-repeat: no-repeat;
   background-position: 20% 50%, 40%;
   min-height: 100vh;
-
 }
 
 .p-10 {
@@ -94,10 +93,6 @@ table {
   justify-content: space-around;
 }
 
-.ml-360 {
-  margin-left: 360px;
-}
-
 .ml-10 {
   margin-left: 10px;
 }
@@ -140,10 +135,6 @@ table {
 
 .ml-30 {
   margin-left: 30px;
-}
-
-.ml-100 {
-  margin-left: 100px;
 }
 
 .jc-flex-start {
@@ -202,10 +193,6 @@ table {
   width: 95%;
 }
 
-.width-1000 {
-  width: 1000px;
-}
-
 .border-radius-5 {
   border-radius: 5px;
 }
@@ -223,12 +210,25 @@ input {
   max-width: 50%;
 }
 
+.form-input-container {
+  margin-left: 100px;
+}
+
+.form-category-box {
+  width: 1000px;
+}
+
+.income {
+  margin-left: 360px;
+}
+
 .terms-of-use {
   color: rgb(var(--black));
   background-color: rgba(var(--white-with-80-opacity));
   max-width: 500px;
   padding: 10px;
   margin-left: 300px;
+  border-radius: 5px;
 }
 
 .text-align-center {
@@ -291,13 +291,18 @@ label {
 
 @media screen and (max-width: 415px) {
   .welcome-title, .main-title {
-    font-size: 30px;
+    font-size: 40px;
+  }
+
+  .mobile-text-center {
+    padding: 5px;
+    text-align: center;
   }
   label, .estimated-tax-brackets {
     font-size: 15px;
   }
-  .modal-box {
-    display: block;
+  .form-box {
+    flex-direction: column;
     margin-left: 0px;
   }
 
@@ -350,12 +355,14 @@ label {
   }
 
   .chart-container {
+    margin-left: 10px;
     height: 200px;
     width: 350px;
   }
 
   .terms-of-use {
     margin: 20px;
+    font-size: 12px;
   }
 
   .updated-price {
@@ -378,16 +385,47 @@ label {
     width: 15px;
     height: 15px;
   }
+
+  .background-form {
+    background-size: 150px, contain;
+    background-position: 80% 77%, 40%;
+  }
   
   .background-extra-pages {
     background-size: 200px, contain;
-    background-position: 50% 3%, 40%;
-    /* min-height: 100dvh; */
+    background-position: 50% 10%, 40%;
   }
 
   .terms-of-use {
     max-width: 400px;
     padding: 10px;
     margin-top: 125px;
+  }
+
+  .form-input-container {
+    margin-left: 15px;
+    align-items: flex-start;
+  }
+
+  .form-category-box {
+    width: fit-content;
+  }
+
+  .info-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nsos-owned {
+    margin-left: 0px;
+  }
+
+  .income {
+    margin-left: 15px;
+  }
+
+  .mobile-margin-top-spacing {
+    margin-top: 10px;
   }
 }

@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 
 const RSUForm = ({rsusOwned, setRsusOwned}) => {
   return (
-    <div className="font-mouldyCheese flex ai-center">
+    <div className="font-mouldyCheese flex ai-center mobile-margin-top-spacing">
       <label>
         Enter RSUs Owned:
         <input
