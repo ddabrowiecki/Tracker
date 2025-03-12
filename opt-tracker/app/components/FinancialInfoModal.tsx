@@ -45,57 +45,63 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
 
   return (
     <div className="gradient-background">
-        <div className="font-orange-red">
-          <div className="welcome-title flex jc-center font-kadoku font-60">
-            <p>Welcome to Reddit Tracker!</p>
-          </div>
-          <div className="flex ai-center font-mouldyCheese flex-column">
-            <p>Let's start by getting some of your stock information!</p>
-          </div>
+      <div className="font-orange-red">
+        <div className="welcome-title flex jc-center font-kadoku font-60">
+          <p>Welcome to Reddit Tracker!</p>
         </div>
-        <div className="flex font-white flex-column ai-center ml-100">
-          <div className="width-1000 flex jc-flex-start">
-            <PersonalInfoForm
-              filingStatus={filingStatus}
-              setFilingStatus={setFilingStatus}
-              estimatedSalary={estimatedSalary}
-              setEstimatedSalary={setEstimatedSalary}
-            />
-          </div>
-          <div className="flex width-1000 mt-20">
-            <ISOForm
-              isosOwned={isosOwned}
-              setIsosOwned={setIsosOwned}
-              isoPurchasePrice={isoPurchasePrice}
-              setIsoPurchasePrice={setIsoPurchasePrice}
-              isoSharesToBuy={isoSharesToBuy}
-              setIsoSharesToBuy={setIsoSharesToBuy}
-              isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
-              setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
-            />
-            <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
-            <NSOForm
-              nsosOwned={nsosOwned}
-              setNsosOwned={setNsosOwned}
-              nsoSharesToBuy={nsoSharesToBuy}
-              setNsoSharesToBuy={setNsoSharesToBuy}
-              nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
-              setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
-            />
-          </div>
-        </div>
-
-        <div className="flex jc-flex-end width-95">
+        <div className="flex jc-center ai-center font-mouldyCheese flex-row">
+          <p>Let's start by getting some of your stock information!</p>
           <Button
-            onClick={handleSubmitInfo}
+            className="ml-10"
             color="warning"
-            variant="contained"
             size="small"
-          >
-            Submit Information
-          </Button>
+            variant="outlined"
+          >{`Learn More >`}</Button>
         </div>
       </div>
+      <div className="flex font-white flex-column ai-center ml-100">
+        <div className="width-1000 flex jc-flex-start">
+          <PersonalInfoForm
+            filingStatus={filingStatus}
+            setFilingStatus={setFilingStatus}
+            estimatedSalary={estimatedSalary}
+            setEstimatedSalary={setEstimatedSalary}
+          />
+        </div>
+        <div className="flex width-1000 mt-20">
+          <ISOForm
+            isosOwned={isosOwned}
+            setIsosOwned={setIsosOwned}
+            isoPurchasePrice={isoPurchasePrice}
+            setIsoPurchasePrice={setIsoPurchasePrice}
+            isoSharesToBuy={isoSharesToBuy}
+            setIsoSharesToBuy={setIsoSharesToBuy}
+            isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
+            setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
+          />
+          <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
+          <NSOForm
+            nsosOwned={nsosOwned}
+            setNsosOwned={setNsosOwned}
+            nsoSharesToBuy={nsoSharesToBuy}
+            setNsoSharesToBuy={setNsoSharesToBuy}
+            nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
+            setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
+          />
+        </div>
+      </div>
+
+      <div className="flex jc-flex-end width-95">
+        <Button
+          onClick={handleSubmitInfo}
+          color="warning"
+          variant="contained"
+          size="small"
+        >
+          Submit Information
+        </Button>
+      </div>
+    </div>
   );
 };
 

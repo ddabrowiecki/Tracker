@@ -31,12 +31,20 @@
   background: url("../../opt-tracker/public/editedSnoo.gif"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
   background-size: 200px, 1500px;
   background-repeat: no-repeat;
-  background-position: 48% 40%;
+  background-position: 47% 33%, 40%;
 }
 
 .gradient-background-main-page {
   background-color: rgb(var(--foreground-rgb));
   background-image: linear-gradient(to bottom right,rgba(var(--foreground-rgb)), rgba(var(--gradient-end-color)));
+}
+
+.background-terms-of-use {
+  height: 600px;
+  background: url("../../opt-tracker/public/editedSnoo.gif"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background-size: 400px, 1500px;
+  background-repeat: no-repeat;
+  background-position: 20% 50%, 40%;
 }
 
 .modal {
@@ -68,7 +76,7 @@ table {
 .chart-container {
   height: 300px;
   width: 600px;
-  color: rgb(255, 86, 0)
+  color: rgb(var(--orange-red))
 }
 
 .flex {
@@ -214,6 +222,7 @@ input {
   max-width: 500px;
   text-align: center;
   padding: 10px;
+  margin-left: 300px;
 }
 
 .terms-container {

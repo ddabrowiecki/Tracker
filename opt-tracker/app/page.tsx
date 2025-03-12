@@ -164,11 +164,11 @@ export default function Home() {
       {finData !== undefined && (
         <Table finData={finData} stockPrice={stockPrice} />
       )}
-      <div className="flex space-around bottom-text">
+      <div className="flex space-around bottom-text font-white">
         <div>
           <Link href="/terms-of-use">Terms Of Use</Link>
         </div>
-        <div className="github-link font-white">
+        <div className="github-link">
           <Link href="http://www.github.com/ddabrowiecki/Tracker">
             View project on GitHub
           </Link>

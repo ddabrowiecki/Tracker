@@ -1,7 +1,7 @@
 import React from "react";
 
 const TermsOfUse = () => (
-  <div className="terms-container">
+  <div className="terms-container background-terms-of-use">
     <div className="terms-of-use">
       <p>
         The information returned on this web site in response to your query is
