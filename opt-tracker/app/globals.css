@@ -8,6 +8,7 @@
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --orange-red: 255, 86, 0;
+  --white-with-80-opacity: 255,255,255,.8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,10 +27,14 @@
   src: url('../fonts/MouldyCheeseRegular-WyMWG.ttf'),
 }
 
+/* body {
+  min-height: 100vh;
+} */
+
 .background-form {
-  height: 600px;
+  min-height: 100vh;
   background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
-  background-size: 200px, 1500px;
+  background-size: 200px, contain;
   background-repeat: no-repeat;
   background-position: 47% 33%, 40%;
 }
@@ -226,7 +231,7 @@ input {
 
 .terms-of-use {
   color: rgb(var(--black));
-  background-color: rgb(var(--white));
+  background-color: rgba(var(--white-with-80-opacity));
   max-width: 500px;
   padding: 10px;
   margin-left: 300px;
@@ -378,5 +383,26 @@ label {
   .reload-icon {
     width: 15px;
     height: 15px;
+  }
+  
+  .background-extra-pages {
+    height: 700px;
+    background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+    background-size: 200px, 400px;
+    background-repeat: no-repeat;
+    background-position: 50% 3%, 40%;
+  }
+
+  .terms-of-use {
+    color: rgb(var(--black));
+    background-color: rgba(var(--white-with-80-opacity));
+    max-width: 400px;
+    padding: 10px;
+    margin-top: 125px;
+  }
+
+  .terms-container {
+    display: flex;
+    align-items: 75%;
   }
 }
