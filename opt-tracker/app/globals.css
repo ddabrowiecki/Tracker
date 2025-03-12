@@ -26,22 +26,22 @@
   src: url('../fonts/MouldyCheeseRegular-WyMWG.ttf'),
 }
 
-.gradient-background {
+.background-form {
   height: 600px;
-  background: url("../../opt-tracker/public/editedSnoo.gif"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
   background-size: 200px, 1500px;
   background-repeat: no-repeat;
   background-position: 47% 33%, 40%;
 }
 
-.gradient-background-main-page {
+.background-main-page {
   background-color: rgb(var(--foreground-rgb));
   background-image: linear-gradient(to bottom right,rgba(var(--foreground-rgb)), rgba(var(--gradient-end-color)));
 }
 
-.background-terms-of-use {
+.background-extra-pages {
   height: 600px;
-  background: url("../../opt-tracker/public/editedSnoo.gif"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
   background-size: 400px, 1500px;
   background-repeat: no-repeat;
   background-position: 20% 50%, 40%;
@@ -71,6 +71,10 @@ table {
   }
   font-size: 20px;
   text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
 }
 
 .chart-container {
@@ -195,6 +199,10 @@ table {
   width: 85%;
 }
 
+.width-95 {
+  width: 95%;
+}
+
 .width-1000 {
   width: 1000px;
 }
@@ -220,9 +228,12 @@ input {
   color: rgb(var(--black));
   background-color: rgb(var(--white));
   max-width: 500px;
-  text-align: center;
   padding: 10px;
   margin-left: 300px;
+}
+
+.text-align-center {
+  text-align: center;
 }
 
 .terms-container {

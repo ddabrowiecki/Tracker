@@ -109,7 +109,7 @@ export default function Home() {
   return modalOpen ? (
     <FinancialInfoModal closeModal={closeModal} />
   ) : (
-    <div className="gradient-background-main-page">
+    <div className="background-main-page">
       <div className="flex jc-center font-orange-red">
         <h2 className="main-title font-kadoku font-60">Reddit Tracker</h2>
       </div>

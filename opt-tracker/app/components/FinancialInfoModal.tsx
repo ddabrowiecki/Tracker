@@ -8,6 +8,7 @@ import { mapToFinData } from "app/utils";
 import PersonalInfoForm from "./PersonalInfoForm";
 import RSUForm from "./RSUForm";
 import { FinData } from "app/types";
+import Link from "next/link";
 
 interface ModalProps {
   closeModal: (finData: FinData) => void;
@@ -44,7 +45,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="gradient-background">
+    <div className="background-form">
       <div className="font-orange-red">
         <div className="welcome-title flex jc-center font-kadoku font-60">
           <p>Welcome to Reddit Tracker!</p>
@@ -56,7 +57,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
             color="warning"
             size="small"
             variant="outlined"
-          >{`Learn More >`}</Button>
+          ><Link href="/more-info">{`Learn More >`}</Link></Button>
         </div>
       </div>
       <div className="flex font-white flex-column ai-center ml-100">
