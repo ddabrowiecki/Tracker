@@ -10,30 +10,34 @@ Given the 3 different types of stock options (NSOs, ISOs, and RSUs), their varyi
 
 ## Form to enter stock option information
 
-A user is first greeted by this page, prompting them to enter in their stock option information as well as tax bracket and expected income. For the demo, we have simply invented the numbers to show the calculations.
-<img width="859" alt="Screenshot 2024-10-03 233557" src="https://github.com/user-attachments/assets/0ddcd6fe-79ec-4864-bb2c-8bd030540759">
+A user is first greeted by this page, prompting them to enter in their stock option information as well as tax bracket and expected income. For the demo, we have simply invented the numbers to show the calculations.\
+<img width="785" alt="Screenshot 2025-03-13 202740" src="https://github.com/user-attachments/assets/4e536e85-59ae-478f-a9cb-af3f5cf5352f" />\
+**MOBILE:**
+<img width="119" alt="Screenshot 2025-03-13 204310" src="https://github.com/user-attachments/assets/6dfe2654-92df-440e-8787-41b06ef5e2bc" />
+
+## Page explainer
+If users are curious about what the web app does or want to know more about how their data is used, they can click "Learn More" to go to this page\
+<img width="703" alt="Screenshot 2025-03-13 202849" src="https://github.com/user-attachments/assets/030e63dd-80b2-4dfe-8b14-421a7d3cede6" />
 
 ## Main page
 
-After clicking submit, the main page is displayed. First, a user sees the current stock price and a graph tracking the stock over time.
-<img width="879" alt="Screenshot 2024-10-03 233338" src="https://github.com/user-attachments/assets/e190d37c-eadc-41a4-95bb-f9cc1283b6a5">
+After clicking submit, the main page is displayed. First, a user sees the current stock price and a graph tracking the stock over time.\
+<img width="923" alt="Screenshot 2025-03-13 203759" src="https://github.com/user-attachments/assets/a6985792-ee62-4995-9191-a3dd11006d0b" />\
 
-There is an option to enable a price slider to recalculate the table below, so that a user can understand the difference in tax burden based on a different stock price.  
-
-<img width="503" alt="Screenshot 2024-10-03 233443" src="https://github.com/user-attachments/assets/773f2922-942b-410e-9d22-9d9ea542b279">
+**MOBILE:**\
+<img width="120" alt="Screenshot 2025-03-13 204033" src="https://github.com/user-attachments/assets/7e5e0231-f331-4df2-91a2-e6d1f7bf9f3b" />\
+There is an option to enable a price slider to recalculate the table below, so that a user can understand the difference in tax burden based on a different stock price.\  
+<img width="482" alt="Screenshot 2025-03-13 203822" src="https://github.com/user-attachments/assets/74c942d2-2887-48f0-a627-0ac53bced272" />
 
 ## The tax table
 
-Here a user sees the rough calculation of taxes. The table is split up to help the user understand the value of currently owned stocks and the tax burden on stocks yet to be exercised (based on today's stock price).
-<img width="927" alt="Screenshot 2024-10-03 233656" src="https://github.com/user-attachments/assets/c2b65d93-f2f8-4ca8-a752-c7ab8efcd46a">
-<img width="932" alt="Screenshot 2024-10-03 233730" src="https://github.com/user-attachments/assets/6bcd5c40-a7ad-411f-878f-e9658260dea3">
+Here a user sees the rough calculation of taxes. The table is split up to help the user understand the value of currently owned stocks and the tax burden on stocks yet to be exercised (based on today's stock price).\
+<img width="933" alt="Screenshot 2025-03-13 202812" src="https://github.com/user-attachments/assets/c377e25a-5044-4a1f-ab96-6b3be3926ae8" />
 
 ## The disclaimer
 
 Any public website related to financial calculations needs a good disclaimer. Of course, this website does not constitute tax advice!   
-
-<img width="670" alt="Screenshot 2024-10-03 233811" src="https://github.com/user-attachments/assets/7c1bd16e-d2ae-4555-9ed9-ac32abf15560">
-
+<img width="745" alt="Screenshot 2025-03-13 202830" src="https://github.com/user-attachments/assets/ba2051cf-5f8a-40dc-86be-08c2468671de" />
 
 
 # Structure of the Application
