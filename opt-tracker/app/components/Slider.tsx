@@ -8,12 +8,12 @@ const marks = [
     label: "$0",
   },
   {
-    value: 50,
-    label: "$50",
+    value: 200,
+    label: "$200",
   },
   {
-    value: 100,
-    label: "$100",
+    value: 400,
+    label: "$400",
   },
 ];
 
@@ -34,7 +34,7 @@ const PriceSlider: FC<PriceSliderProps> = ({ toggleSlider, priceSliderValue, han
         aria-label="Price Slider"
         step={0.5}
         min={0}
-        max={100}
+        max={400}
         value={priceSliderValue}
         color="warning"
         marks={marks}
