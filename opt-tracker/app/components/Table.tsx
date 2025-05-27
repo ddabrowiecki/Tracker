@@ -54,16 +54,16 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
             </thead>
             <tbody>
               <tr>
-                <td className="font-white">{finData.rsusOwned}</td>
-                <td className="font-white">{finData.nsosOwned}</td>
-                <td className="font-white">{finData.isosOwned}</td>
-                <td className="font-white">
+                <td>{finData.rsusOwned}</td>
+                <td>{finData.nsosOwned}</td>
+                <td>{finData.isosOwned}</td>
+                <td>
                   {finData.isoPurchasePrice && `$${finData.isoPurchasePrice}`}
                 </td>
-                <td className="font-white">{`$${totalOwnedValue.toFixed(
+                <td>{`$${totalOwnedValue.toFixed(
                   2
                 )}`}</td>
-                <td className="font-white">
+                <td>
                   {capitalGains.totalAfterTax &&
                     `$${capitalGains.totalAfterTax.toFixed(2)}`}
                 </td>
@@ -107,14 +107,14 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
             </thead>
             <tbody>
               <tr>
-                <td className="font-white">{finData.isoSharesToBuy}</td>
-                <td className="font-white">{`$${finData.isoSharesToBuyPurchasePrice}`}</td>
-                <td className="font-white">{finData.nsoSharesToBuy}</td>
-                <td className="font-white">{`$${finData.nsoSharesToBuyPurchasePrice}`}</td>
-                <td className="font-white">
+                <td>{finData.isoSharesToBuy}</td>
+                <td>{`$${finData.isoSharesToBuyPurchasePrice}`}</td>
+                <td>{finData.nsoSharesToBuy}</td>
+                <td>{`$${finData.nsoSharesToBuyPurchasePrice}`}</td>
+                <td>
                   {`$${totalPurchasePrice.toFixed(2)}`}
                 </td>
-                <td className="font-white">{`$${totalSharesValue.toFixed(
+                <td>{`$${totalSharesValue.toFixed(
                   2
                 )}`}</td>
               </tr>
@@ -136,10 +136,10 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
             </thead>
             <tbody>
               <tr>
-                <td className="font-white">{`$${finData.estimatedSalary}`}</td>
-                <td className="font-white">{`$${nsoSpread}`}</td>
-                <td className="font-white">{`$${totalIncome}`}</td>
-                <td className="font-white">
+                <td>{`$${finData.estimatedSalary}`}</td>
+                <td>{`$${nsoSpread}`}</td>
+                <td>{`$${totalIncome}`}</td>
+                <td>
                   {regularIncome.tax && `$${regularIncome.tax.toFixed(2)}`}
                 </td>
               </tr>

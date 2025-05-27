@@ -13,7 +13,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --white: 207, 200, 200;
   }
 }
 
@@ -37,7 +37,6 @@
 }
 
 .background-main-page {
-  background-color: rgb(var(--foreground-rgb));
   background-image: linear-gradient(to bottom right,rgba(var(--foreground-rgb)), rgba(var(--gradient-end-color)));
 }
 
@@ -51,6 +50,14 @@
 
 .p-10 {
   padding: 10px;
+}
+
+input {
+  background-color: rgb(var(--white));
+}
+
+.background-white {
+  background-color: rgb(var(--white));
 }
 
 .font-white {
@@ -197,7 +204,7 @@ table {
   border-radius: 5px;
 }
 
-.td {
+td {
   color: rgb(var(--white));
 }
 

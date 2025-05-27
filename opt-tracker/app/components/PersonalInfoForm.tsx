@@ -22,9 +22,9 @@ const PersonalInfoForm = ({
           <Box className="mt-5">
             <FormControl fullWidth>
               <Select
+                className="background-white"
                 color="warning"
                 style={{
-                  backgroundColor: "white",
                   maxHeight: "30px",
                   maxWidth: "200px",
                 }}
