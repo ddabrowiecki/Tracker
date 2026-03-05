@@ -152,10 +152,6 @@ table {
   width: 60%;
 }
 
-.jc-flex-start {
-  justify-content: flex-start;
-}
-
 .jc-flex-end {
   justify-content: flex-end;
 }
@@ -227,10 +223,6 @@ input {
 
 .form-input-container {
   margin-left: 100px;
-}
-
-.form-category-box {
-  width: 1000px;
 }
 
 .income {

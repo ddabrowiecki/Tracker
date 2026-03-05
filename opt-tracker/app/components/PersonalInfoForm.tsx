@@ -16,7 +16,7 @@ const PersonalInfoForm = ({
     setFilingStatus(event.target.value as string);
   };
   return (
-    <>
+  <>
       <BoxWithLabelWrapper title="Tax Filing Status">
         <Box className="mt-5">
           <FormControl fullWidth>
@@ -42,6 +42,7 @@ const PersonalInfoForm = ({
           </FormControl>
         </Box>
       </BoxWithLabelWrapper>
+        <div className="col-start-2 col-end-3"></div>
       <BoxWithLabelWrapper title="Estimated Income">
         <input
           type="text"

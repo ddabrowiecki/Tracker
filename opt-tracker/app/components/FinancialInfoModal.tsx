@@ -55,50 +55,50 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
             color="warning"
             size="small"
             variant="outlined"
-          ><Link href="/more-info">{`Learn More >`}</Link></Button>
-        </div>
-      </div>
-      <div className="flex font-white flex-column ai-center form-input-container">
-        <div className="flex jc-flex-start form-category-box ">
-          <PersonalInfoForm
-            filingStatus={filingStatus}
-            setFilingStatus={setFilingStatus}
-            estimatedSalary={estimatedSalary}
-            setEstimatedSalary={setEstimatedSalary}
-          />
-        </div>
-        <div className="flex mt-20 form-category-box form-box mobile-margin-top-spacing">
-          <ISOForm
-            isosOwned={isosOwned}
-            setIsosOwned={setIsosOwned}
-            isoPurchasePrice={isoPurchasePrice}
-            setIsoPurchasePrice={setIsoPurchasePrice}
-            isoSharesToBuy={isoSharesToBuy}
-            setIsoSharesToBuy={setIsoSharesToBuy}
-            isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
-            setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
-          />
-          <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
-          <NSOForm
-            nsosOwned={nsosOwned}
-            setNsosOwned={setNsosOwned}
-            nsoSharesToBuy={nsoSharesToBuy}
-            setNsoSharesToBuy={setNsoSharesToBuy}
-            nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
-            setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
-          />
+          >
+            <Link href="/more-info">{`Learn More >`}</Link>
+          </Button>
         </div>
       </div>
 
-      <div className="flex jc-flex-end width-85 mobile-margin-top-spacing mb-40">
-        <Button
-          onClick={handleSubmitInfo}
-          color="warning"
-          variant="contained"
-          size="small"
-        >
-          Submit Information
-        </Button>
+      <div className="grid grid-cols-3 gap-y-[40%] mt-[10%]">
+        <PersonalInfoForm
+          filingStatus={filingStatus}
+          setFilingStatus={setFilingStatus}
+          estimatedSalary={estimatedSalary}
+          setEstimatedSalary={setEstimatedSalary}
+        />
+        <ISOForm
+          isosOwned={isosOwned}
+          setIsosOwned={setIsosOwned}
+          isoPurchasePrice={isoPurchasePrice}
+          setIsoPurchasePrice={setIsoPurchasePrice}
+          isoSharesToBuy={isoSharesToBuy}
+          setIsoSharesToBuy={setIsoSharesToBuy}
+          isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
+          setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
+        />
+        <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
+        <NSOForm
+          nsosOwned={nsosOwned}
+          setNsosOwned={setNsosOwned}
+          nsoSharesToBuy={nsoSharesToBuy}
+          setNsoSharesToBuy={setNsoSharesToBuy}
+          nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
+          setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
+        />
+        <div className="col-start-3 col-end-4">
+          <div className="width-85 mobile-margin-top-spacing">
+            <Button
+              onClick={handleSubmitInfo}
+              color="warning"
+              variant="contained"
+              size="small"
+            >
+              Submit Information
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
