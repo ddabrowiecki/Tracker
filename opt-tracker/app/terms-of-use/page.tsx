@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsOfUse = () => (
   <div className="terms-container background-extra-pages">
-    <div className="terms-of-use text-align-center">
+    <div className="terms-of-use text-center">
       <p>
         The information returned on this web site in response to your query is
         only intended to give you a general overview, and in no way constitute
