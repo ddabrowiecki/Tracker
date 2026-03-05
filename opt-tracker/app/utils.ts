@@ -77,6 +77,7 @@ const taxBrackets2024: TaxBracketMaster = {
   },
 };
 
+// Tax brackets for 2025
 const taxBrackets2025: TaxBracketMaster = {
   capitalGains: {
     single: {
@@ -140,6 +141,70 @@ const taxBrackets2025: TaxBracketMaster = {
   },
 };
 
+const taxBrackets2026: TaxBracketMaster = {
+  capitalGains: {
+    single: {
+      zero: [0, 49450, 0, "0%", "$0 to $49,450"],
+      fifteen: [49451, 545500, 0.15, "15%", "$49,451 to $545,500"],
+      twenty: [545501, 1000000000, 0.2, "20%", "$545,501 +"],
+    },
+    marriedFilingJointly: {
+      zero: [0, 98900, 0, "0%", "$0 to $98,900"],
+      fifteen: [98901, 613700, 0.15, "15%", "$98,901 to $613,700"],
+      twenty: [613701, 1000000000, 0.2, "20%", "$613,701 +"],
+    },
+    marriedFilingSeparately: {
+      zero: [0, 49450, 0, "0%", "$0 to $49,450"],
+      fifteen: [49451, 306850, 0.15, "15%", "$49,451 to $306,850"],
+      twenty: [306851, 1000000000, 0.2, "20%", "$306,851 +"],
+    },
+    headOfHousehold: {
+      zero: [0, 66200, 0, "0%", "$0 to $66,200"],
+      fifteen: [66201, 579600, 0.15, "15%", "$66,201 to $579,600"],
+      twenty: [579601, 1000000000, 0.2, "20%", "$579,601 +"],
+    },
+  },
+  regularIncome: {
+    single: {
+      ten: [0, 12400, 0.1, "10%", "$0 to $12,400"],
+      twelve: [12401, 50400, 0.12, "12%", "$12,401 to $50,400"],
+      twentytwo: [50401, 105700, 0.22, "22%", "$50,401 to $105,700"],
+      twentyfour: [105701, 201775, 0.24, "24%", "$105,701 to $201,775"],
+      thirtytwo: [201776, 256225, 0.32, "32%", "$201,776 to $256,225"],
+      thirtyfive: [256226, 640600, 0.35, "35%", "$256,226 to $640,600"],
+      thirtyseven: [640601, 1000000000, 0.37, "37%", "$640,601 or more"],
+    },
+
+    marriedFilingJointly: {
+      ten: [0, 24800, 0.1, "10%", "$0 to $24,800"],
+      twelve: [24801, 100800, 0.12, "12%", "$24,801 to $100,800"],
+      twentytwo: [100801, 211400, 0.22, "22%", "$100,801 to $211,400"],
+      twentyfour: [211401, 403550, 0.24, "24%", "$211,401 to $403,550"],
+      thirtytwo: [403551, 512450, 0.32, "32%", "$403,551 to $512,450"],
+      thirtyfive: [512451, 768700, 0.35, "35%", "$512,451 to $768,700"],
+      thirtyseven: [768701, 1000000000, 0.37, "37%", "$768,701 +"],
+    },
+    marriedFilingSeparately: {
+      ten: [0, 12400, 0.1, "10%", "$0 to $12,400"],
+      twelve: [12401, 50400, 0.12, "12%", "$12,401 to $50,400"],
+      twentytwo: [50401, 105700, 0.22, "22%", "$50,401 to $105,700"],
+      twentyfour: [105701, 201775, 0.24, "24%", "$105,701 to $201,775"],
+      thirtytwo: [201776, 256225, 0.32, "32%", "$201,776 to $256,225"],
+      thirtyfive: [256226, 384350, 0.35, "35%", "$256,226 to $384,350"],
+      thirtyseven: [384351, 1000000000, 0.37, "37%", "$384,351 +"],
+    },
+    headOfHousehold: {
+      ten: [0, 17700, 0.1, "10%", "$0 to $17,700"],
+      twelve: [17701, 67450, 0.12, "12%", "$17,701 to $67,450"],
+      twentytwo: [67451, 105700, 0.22, "22%", "$67,451 to $105,700"],
+      twentyfour: [105701, 201775, 0.24, "24%", "$105,701 to $201,775"],
+      thirtytwo: [201776, 256200, 0.32, "32%", "$201,776 to $256,200"],
+      thirtyfive: [256201, 640600, 0.35, "35%", "$256,201 to $640,600"],
+      thirtyseven: [640601, 1000000000, 0.37, "37%", "$640,601 +"],
+    },
+  },
+};
+
 export const determineTaxBrackets = (
   totalOwnedValue: number,
   totalIncome: number,
@@ -147,7 +212,7 @@ export const determineTaxBrackets = (
 ) => {
   const capGains: TaxInfo = {} as TaxInfo;
   const regIncome: TaxInfo = {} as TaxInfo;
-  Object.values(taxBrackets2025.capitalGains[filingStatus]).forEach((bracket) => {
+  Object.values(taxBrackets2026.capitalGains[filingStatus]).forEach((bracket) => {
     if (totalOwnedValue >= bracket[0] && totalOwnedValue <= bracket[1]) {
       capGains.tax = totalOwnedValue * bracket[2];
       capGains.rate = bracket[3];
@@ -155,7 +220,7 @@ export const determineTaxBrackets = (
       capGains.totalAfterTax = totalOwnedValue - totalOwnedValue * bracket[2];
     }
   });
-  Object.values(taxBrackets2025.regularIncome[filingStatus]).forEach((bracket) => {
+  Object.values(taxBrackets2026.regularIncome[filingStatus]).forEach((bracket) => {
     if (totalIncome >= bracket[0] && totalIncome <= bracket[1]) {
       regIncome.tax = totalIncome * bracket[2];
       regIncome.rate = bracket[3];
