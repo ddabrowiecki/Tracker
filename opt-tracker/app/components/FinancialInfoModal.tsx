@@ -43,7 +43,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="background-form">
+    <div className="background-form p-[2%]">
       <div className="font-orange-red">
         <div className="welcome-title flex jc-center font-kadoku font-60 mobile-text-center">
           <p>Welcome to Reddit Tracker!</p>
@@ -61,7 +61,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-y-[40%] mt-[10%]">
+      <div className="grid grid-cols-3 gap-x-[5%] gap-y-[20%] mt-[10%]">
         <PersonalInfoForm
           filingStatus={filingStatus}
           setFilingStatus={setFilingStatus}

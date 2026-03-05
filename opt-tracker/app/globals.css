@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 6, 44, 105;
+  --foreground-rgb: 6, 44, 105, .9;
   --gradient-end-color: 61, 138, 153;
   --white: 255, 255, 255;
   --black: 0, 0, 0;
@@ -30,12 +30,7 @@
 .background-form {
   min-height: 100vh;
   background:
-    url("../../opt-tracker/public/editedSnoo.png"),
-    linear-gradient(
-      to bottom right,
-      rgb(var(--foreground-rgb)),
-      rgb(var(--gradient-end-color))
-    );
+    url("../../opt-tracker/public/editedSnoo.png"), rgb(var(--foreground-rgb));
   background-size: 200px, contain;
   background-repeat: no-repeat;
   background-position:
