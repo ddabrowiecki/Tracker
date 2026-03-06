@@ -1,18 +1,18 @@
 import { validateInput } from "app/utils";
 import React, { FC, useState } from "react";
+import BoxWithLabelWrapper from "./BoxWithLabel";
 
-const RSUForm = ({rsusOwned, setRsusOwned}) => {
+const RSUForm = ({ rsusOwned, setRsusOwned }) => {
   return (
-    <div className="font-mouldyCheese flex ai-center mobile-margin-top-spacing">
-      <label>
-        Enter RSUs Owned:
-        <input
-          type="text"
-          value={rsusOwned}
-          onChange={(e) => validateInput(setRsusOwned, e.target.value)}
-        />
-      </label>
-    </div>
+    <BoxWithLabelWrapper title="Reserved Stock Units (RSUs)">
+      <input
+        type="text"
+        value={rsusOwned}
+        onChange={(e) => validateInput(setRsusOwned, e.target.value)}
+        placeholder="Amount Owned"
+        aria-label="Amount of RSUs Owned"
+      />
+    </BoxWithLabelWrapper>
   );
 };
 

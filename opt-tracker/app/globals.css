@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 6, 44, 105;
+  --foreground-rgb: 6, 44, 105, .9;
   --gradient-end-color: 61, 138, 153;
   --white: 255, 255, 255;
   --black: 0, 0, 0;
   --orange-red: 255, 86, 0;
-  --white-with-80-opacity: 255,255,255,.8;
+  --white-with-80-opacity: 255, 255, 255, 0.8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,43 +18,52 @@
 }
 
 @font-face {
-  font-family: 'kadoku';
-  src: url('../fonts/Kadoku-YqEa8.otf'),
+  font-family: "kadoku";
+  src: url("../fonts/Kadoku-YqEa8.otf");
 }
 
 @font-face {
-  font-family: 'mouldy-cheese';
-  src: url('../fonts/MouldyCheeseRegular-WyMWG.ttf'),
+  font-family: "mouldy-cheese";
+  src: url("../fonts/MouldyCheeseRegular-WyMWG.ttf");
 }
 
 .background-form {
   min-height: 100vh;
-  background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background:
+    url("../../opt-tracker/public/editedSnoo.png"), rgb(var(--foreground-rgb));
   background-size: 200px, contain;
   background-repeat: no-repeat;
-  background-position: 47% 33%, 40%;
+  background-position:
+    47% 33%,
+    40%;
   overflow: scroll;
 }
 
 .background-main-page {
-  background-image: linear-gradient(to bottom right,rgba(var(--foreground-rgb)), rgba(var(--gradient-end-color)));
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(var(--foreground-rgb)),
+    rgba(var(--gradient-end-color))
+  );
 }
 
 .background-extra-pages {
-  background: url("../../opt-tracker/public/editedSnoo.png"), linear-gradient(to bottom right, rgb(var(--foreground-rgb)), rgb(var(--gradient-end-color)) );
+  background:
+    url("../../opt-tracker/public/editedSnoo.png"),
+    linear-gradient(
+      to bottom right,
+      rgb(var(--foreground-rgb)),
+      rgb(var(--gradient-end-color))
+    );
   background-size: 400px, contain;
   background-repeat: no-repeat;
-  background-position: 20% 50%, 40%;
+  background-position:
+    20% 50%,
+    40%;
   min-height: 100vh;
 }
 
-.p-10 {
-  padding: 10px;
-}
-
-input {
-  background-color: rgb(var(--white));
-}
+/* Colors */
 
 .background-white {
   background-color: rgb(var(--white));
@@ -65,31 +74,24 @@ input {
 }
 
 .font-orange-red {
-  color: rgb(var(--orange-red))
+  color: rgb(var(--orange-red));
 }
 
 table {
-  border:1px solid rgb(var(--orange-red));
-  td, th {
-    border:1px solid rgb(var(--orange-red));
+  border: 1px solid rgb(var(--orange-red));
+  td,
+  th {
+    border: 1px solid rgb(var(--orange-red));
     padding: 5px;
   }
   font-size: 20px;
   text-align: center;
 }
 
-.text-align-left {
-  text-align: left;
-}
-
 .chart-container {
   height: 300px;
   width: 600px;
-  color: rgb(var(--orange-red))
-}
-
-.flex {
-  display: flex; 
+  color: rgb(var(--orange-red));
 }
 
 .space-between {
@@ -138,14 +140,6 @@ table {
 
 .width-60 {
   width: 60%;
-}
-
-.ml-30 {
-  margin-left: 30px;
-}
-
-.jc-flex-start {
-  justify-content: flex-start;
 }
 
 .jc-flex-end {
@@ -212,17 +206,9 @@ input {
   border-radius: 5px;
   font-size: 15px;
   color: rgb(var(--black));
-  font-family:"Arial, Helvetica, sans-serif";
   padding-left: 10px;
-  max-width: 50%;
-}
-
-.form-input-container {
-  margin-left: 100px;
-}
-
-.form-category-box {
-  width: 1000px;
+  max-width: 60%;
+  margin-top: 10px;
 }
 
 .income {
@@ -236,10 +222,6 @@ input {
   padding: 10px;
   margin-left: 300px;
   border-radius: 5px;
-}
-
-.text-align-center {
-  text-align: center;
 }
 
 .terms-container {
@@ -294,10 +276,17 @@ label {
   width: 32px;
 }
 
+.form-border-box {
+  border: 2px solid orangered;
+  border-radius: 4px;
+  padding: 10px;
+}
+
 /* Mobile settings */
 
 @media screen and (max-width: 415px) {
-  .welcome-title, .main-title {
+  .welcome-title,
+  .main-title {
     font-size: 40px;
   }
 
@@ -305,7 +294,8 @@ label {
     padding: 5px;
     text-align: center;
   }
-  label, .estimated-tax-brackets {
+  label,
+  .estimated-tax-brackets {
     font-size: 15px;
   }
   .form-box {
@@ -313,7 +303,11 @@ label {
     margin-left: 0px;
   }
 
-  .font-white, table, .tax-bracket-container, .normal-font, .bottom-text {
+  .font-white,
+  table,
+  .tax-bracket-container,
+  .normal-font,
+  .bottom-text {
     font-size: 12px;
   }
 
@@ -395,23 +389,22 @@ label {
 
   .background-form {
     background-size: 150px, contain;
-    background-position: 80% 77%, 40%;
+    background-position:
+      80% 77%,
+      40%;
   }
-  
+
   .background-extra-pages {
     background-size: 200px, contain;
-    background-position: 50% 10%, 40%;
+    background-position:
+      50% 10%,
+      40%;
   }
 
   .terms-of-use {
     max-width: 400px;
     padding: 10px;
     margin-top: 125px;
-  }
-
-  .form-input-container {
-    margin-left: 15px;
-    align-items: flex-start;
   }
 
   .form-category-box {
@@ -422,10 +415,6 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .nsos-owned {
-    margin-left: 0px;
   }
 
   .income {

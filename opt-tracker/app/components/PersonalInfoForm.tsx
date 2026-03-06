@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Box from "@mui/material/Box";
+import BoxWithLabelWrapper from "./BoxWithLabel";
 
 const PersonalInfoForm = ({
   estimatedSalary,
@@ -15,47 +16,44 @@ const PersonalInfoForm = ({
     setFilingStatus(event.target.value as string);
   };
   return (
-    <div className="font-mouldyCheese font-white flex mt-20">
-      <div>
-        <label>
-          What is your tax filing status?
-          <Box className="mt-5">
-            <FormControl fullWidth>
-              <Select
-                className="background-white"
-                color="warning"
-                style={{
-                  maxHeight: "30px",
-                  maxWidth: "200px",
-                }}
-                value={filingStatus}
-                onChange={handleSelectChange}
-              >
-                <MenuItem value="single">Single</MenuItem>
-                <MenuItem value="marriedFilingJointly">
-                  Married Filing Jointly
-                </MenuItem>
-                <MenuItem value="marriedFilingSeparately">
-                  Married Filing Separately
-                </MenuItem>
-                <MenuItem value="headOfHousehold">Head of Household</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-        </label>
-      </div>
-      <div className="income">
-        <label>
-          <span>How much do you plan to make this year </span>
-          <span>(income without stock options)?</span>
-          <input
-            type="text"
-            value={estimatedSalary}
-            onChange={(e) => validateInput(setEstimatedSalary, e.target.value)}
-          />
-        </label>
-      </div>
-    </div>
+    <>
+      <BoxWithLabelWrapper title="Tax Filing Status">
+        <Box className="mt-5">
+          <FormControl fullWidth>
+            <Select
+              className="background-white"
+              color="warning"
+              style={{
+                maxHeight: "25px",
+                maxWidth: "200px",
+              }}
+              value={filingStatus}
+              onChange={handleSelectChange}
+            >
+              <MenuItem value="single">Single</MenuItem>
+              <MenuItem value="marriedFilingJointly">
+                Married Filing Jointly
+              </MenuItem>
+              <MenuItem value="marriedFilingSeparately">
+                Married Filing Separately
+              </MenuItem>
+              <MenuItem value="headOfHousehold">Head of Household</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </BoxWithLabelWrapper>
+      <div className="col-start-2 col-end-3"></div>
+      <BoxWithLabelWrapper title="Estimated Income">
+        <input
+          className="mt-5"
+          type="text"
+          value={estimatedSalary}
+          onChange={(e) => validateInput(setEstimatedSalary, e.target.value)}
+          placeholder="Without Stock Options"
+          aria-label="Estimated Income Without Stock Options"
+        />
+      </BoxWithLabelWrapper>
+    </>
   );
 };
 

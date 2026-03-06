@@ -43,62 +43,64 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="background-form">
+    <div className="background-form p-[2%]">
       <div className="font-orange-red">
         <div className="welcome-title flex jc-center font-kadoku font-60 mobile-text-center">
           <p>Welcome to Reddit Tracker!</p>
         </div>
-        <div className="flex jc-center ai-center font-mouldyCheese flex-row info-request mobile-text-center">
+        <div className="text-white flex justify-center items-center font-mouldyCheese info-request mobile-text-center">
           <p>Let's start by getting some of your stock information!</p>
-          <Button
-            className="ml-10"
-            color="warning"
-            size="small"
-            variant="outlined"
-          ><Link href="/more-info">{`Learn More >`}</Link></Button>
-        </div>
-      </div>
-      <div className="flex font-white flex-column ai-center form-input-container">
-        <div className="flex jc-flex-start form-category-box ">
-          <PersonalInfoForm
-            filingStatus={filingStatus}
-            setFilingStatus={setFilingStatus}
-            estimatedSalary={estimatedSalary}
-            setEstimatedSalary={setEstimatedSalary}
-          />
-        </div>
-        <div className="flex mt-20 form-category-box form-box mobile-margin-top-spacing">
-          <ISOForm
-            isosOwned={isosOwned}
-            setIsosOwned={setIsosOwned}
-            isoPurchasePrice={isoPurchasePrice}
-            setIsoPurchasePrice={setIsoPurchasePrice}
-            isoSharesToBuy={isoSharesToBuy}
-            setIsoSharesToBuy={setIsoSharesToBuy}
-            isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
-            setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
-          />
-          <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
-          <NSOForm
-            nsosOwned={nsosOwned}
-            setNsosOwned={setNsosOwned}
-            nsoSharesToBuy={nsoSharesToBuy}
-            setNsoSharesToBuy={setNsoSharesToBuy}
-            nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
-            setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
-          />
+          <div className="ml-3">
+            <Button
+              className="ml-10"
+              color="warning"
+              size="small"
+              variant="outlined"
+            >
+              <Link href="/more-info">{`Learn More >`}</Link>
+            </Button>
+          </div>
         </div>
       </div>
 
-      <div className="flex jc-flex-end width-85 mobile-margin-top-spacing mb-40">
-        <Button
-          onClick={handleSubmitInfo}
-          color="warning"
-          variant="contained"
-          size="small"
-        >
-          Submit Information
-        </Button>
+      <div className="grid grid-cols-3 gap-x-[5%] gap-y-[20%] mt-[5%]">
+        <PersonalInfoForm
+          filingStatus={filingStatus}
+          setFilingStatus={setFilingStatus}
+          estimatedSalary={estimatedSalary}
+          setEstimatedSalary={setEstimatedSalary}
+        />
+        <ISOForm
+          isosOwned={isosOwned}
+          setIsosOwned={setIsosOwned}
+          isoPurchasePrice={isoPurchasePrice}
+          setIsoPurchasePrice={setIsoPurchasePrice}
+          isoSharesToBuy={isoSharesToBuy}
+          setIsoSharesToBuy={setIsoSharesToBuy}
+          isoSharesToBuyPurchasePrice={isoSharesToBuyPurchasePrice}
+          setIsoSharesToBuyPurchasePrice={setIsoSharesToBuyPurchasePrice}
+        />
+        <RSUForm rsusOwned={rsusOwned} setRsusOwned={setRsusOwned} />
+        <NSOForm
+          nsosOwned={nsosOwned}
+          setNsosOwned={setNsosOwned}
+          nsoSharesToBuy={nsoSharesToBuy}
+          setNsoSharesToBuy={setNsoSharesToBuy}
+          nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
+          setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
+        />
+        <div className="col-start-3 col-end-4">
+          <div className="width-85 mobile-margin-top-spacing">
+            <Button
+              onClick={handleSubmitInfo}
+              color="warning"
+              variant="contained"
+              size="small"
+            >
+              Submit Information
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
