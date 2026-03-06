@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 6, 44, 105, .9;
+  --foreground-rgb: 6, 44, 105, 0.9;
   --darker-orange-red: 164, 59, 7;
   --gradient-end-color: 61, 138, 153;
   --white: 255, 255, 255;
@@ -83,11 +83,18 @@
 }
 
 table {
-  border: 1px solid rgb(var(--orange-red));
+  border-collapse: separate; 
+  border-spacing: 0;
+  padding: 5px;
   td,
   th {
-    border: 1px solid rgb(var(--orange-red));
     padding: 5px;
+    border-radius: 10px;
+    color: white;
+  }
+  th {
+    background-color: rgb(var(--orange-red));
+    border-right: 1px solid white;
   }
   font-size: 20px;
   text-align: center;
@@ -222,10 +229,6 @@ input {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
-}
-
-.max-w-40 {
-  max-width: 40%;
 }
 
 label {

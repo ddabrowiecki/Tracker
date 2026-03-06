@@ -60,8 +60,8 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
           </div>
         </div>
       </div>
-      <div className="table-contents">
-        <div className="flex items-center mobile-flex-column mt-10">
+      <div>
+        <div className="flex items-center border-white rounded-md mobile-flex-column mt-10">
           <table className="table">
             <thead>
               <tr className="font-orange-red">
@@ -141,7 +141,7 @@ const Table: FC<TableProps> = ({ finData, stockPrice }) => {
               </tr>
             </tbody>
           </table>
-          <div className="tax-explainer max-w-40">
+          <div className="tax-explainer max-w-[30%]">
             <p className="font-white">{`Tax Burden is calculated as a simple percentage. Your ultimate tax burden may vary based on your personal circumstances (e.g. deductions, credits)`}</p>
           </div>
         </div>
