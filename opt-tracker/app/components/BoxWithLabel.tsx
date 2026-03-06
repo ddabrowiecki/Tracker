@@ -6,7 +6,7 @@ interface BoxWithLabelProps {
 const BoxWithLabelWrapper = ({ title, children }: BoxWithLabelProps) => (
   <>
     <div className="mobile-margin-top-spacing form-border-box">
-      <div className="font-orange-red bg-foreground mt-[-5%] w-[60%]">{title}</div>
+      <div className="font-orange-red font-bold bg-foreground mt-[-7%] w-max px-1">{title}</div>
       {children}
     </div>
   </>

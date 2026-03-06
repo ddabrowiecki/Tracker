@@ -17,7 +17,7 @@ const NSOForm = ({
           type="text"
           value={nsosOwned}
           onChange={(e) => validateInput(setNsosOwned, e.target.value)}
-          placeholder="Owned"
+          placeholder="Amount Owned"
           aria-label="Amount of NSOs Owned"
         />
         <input

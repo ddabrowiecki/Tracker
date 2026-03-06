@@ -48,20 +48,22 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
         <div className="welcome-title flex jc-center font-kadoku font-60 mobile-text-center">
           <p>Welcome to Reddit Tracker!</p>
         </div>
-        <div className="flex jc-center ai-center font-mouldyCheese flex-row info-request mobile-text-center">
+        <div className="text-white flex justify-center items-center font-mouldyCheese info-request mobile-text-center">
           <p>Let's start by getting some of your stock information!</p>
-          <Button
-            className="ml-10"
-            color="warning"
-            size="small"
-            variant="outlined"
-          >
-            <Link href="/more-info">{`Learn More >`}</Link>
-          </Button>
+          <div className="ml-3">
+            <Button
+              className="ml-10"
+              color="warning"
+              size="small"
+              variant="outlined"
+            >
+              <Link href="/more-info">{`Learn More >`}</Link>
+            </Button>
+          </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-x-[5%] gap-y-[20%] mt-[10%]">
+      <div className="grid grid-cols-3 gap-x-[5%] gap-y-[20%] mt-[5%]">
         <PersonalInfoForm
           filingStatus={filingStatus}
           setFilingStatus={setFilingStatus}

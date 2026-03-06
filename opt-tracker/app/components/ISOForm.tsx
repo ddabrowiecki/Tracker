@@ -19,7 +19,7 @@ const ISOForm = ({
           type="text"
           value={isosOwned}
           onChange={(e) => validateInput(setIsosOwned, e.target.value)}
-          placeholder="Owned"
+          placeholder="Amount Owned"
           aria-label="Amount of ISOs Owned"
         />
         <input

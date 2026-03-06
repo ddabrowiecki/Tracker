@@ -16,7 +16,7 @@ const PersonalInfoForm = ({
     setFilingStatus(event.target.value as string);
   };
   return (
-  <>
+    <>
       <BoxWithLabelWrapper title="Tax Filing Status">
         <Box className="mt-5">
           <FormControl fullWidth>
@@ -24,7 +24,7 @@ const PersonalInfoForm = ({
               className="background-white"
               color="warning"
               style={{
-                maxHeight: "30px",
+                maxHeight: "25px",
                 maxWidth: "200px",
               }}
               value={filingStatus}
@@ -42,9 +42,10 @@ const PersonalInfoForm = ({
           </FormControl>
         </Box>
       </BoxWithLabelWrapper>
-        <div className="col-start-2 col-end-3"></div>
+      <div className="col-start-2 col-end-3"></div>
       <BoxWithLabelWrapper title="Estimated Income">
         <input
+          className="mt-5"
           type="text"
           value={estimatedSalary}
           onChange={(e) => validateInput(setEstimatedSalary, e.target.value)}

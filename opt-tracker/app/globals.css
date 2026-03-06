@@ -77,11 +77,6 @@
   color: rgb(var(--orange-red));
 }
 
-input {
-  background-color: rgb(var(--white));
-  width: 100%;
-}
-
 table {
   border: 1px solid rgb(var(--orange-red));
   td,
@@ -211,13 +206,9 @@ input {
   border-radius: 5px;
   font-size: 15px;
   color: rgb(var(--black));
-  font-family: "Arial, Helvetica, sans-serif";
   padding-left: 10px;
-  max-width: 50%;
-}
-
-.form-input-container {
-  margin-left: 100px;
+  max-width: 60%;
+  margin-top: 10px;
 }
 
 .income {
@@ -414,11 +405,6 @@ label {
     max-width: 400px;
     padding: 10px;
     margin-top: 125px;
-  }
-
-  .form-input-container {
-    margin-left: 15px;
-    align-items: flex-start;
   }
 
   .form-category-box {
