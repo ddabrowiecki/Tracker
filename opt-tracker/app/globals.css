@@ -4,6 +4,7 @@
 
 :root {
   --foreground-rgb: 6, 44, 105, .9;
+  --darker-orange-red: 164, 59, 7;
   --gradient-end-color: 61, 138, 153;
   --white: 255, 255, 255;
   --black: 0, 0, 0;
@@ -77,6 +78,10 @@
   color: rgb(var(--orange-red));
 }
 
+.font-darker-orange-red {
+  color: rgb(var(--darker-orange-red));
+}
+
 table {
   border: 1px solid rgb(var(--orange-red));
   td,
@@ -92,14 +97,6 @@ table {
   height: 300px;
   width: 600px;
   color: rgb(var(--orange-red));
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
 }
 
 .ml-10 {
@@ -180,10 +177,6 @@ table {
 
 .flex-row {
   flex-direction: row;
-}
-
-.jc-space-around {
-  justify-content: space-around;
 }
 
 .width-85 {

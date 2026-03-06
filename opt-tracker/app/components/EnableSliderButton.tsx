@@ -6,7 +6,7 @@ interface EnableSliderProps {
 }
 
 const EnableSliderButton: FC<EnableSliderProps> = ({ handleEnableSlider }) => (
-  <div className="slider-button flex space-between width-20 jc-flex-end ai-center">
+  <div className="slider-button flex justify-between width-20 justify-end items-center">
     <Checkbox onChange={handleEnableSlider} color="warning" />
     <div className="font-white">Enable Price Slider</div>
   </div>

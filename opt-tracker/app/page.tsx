@@ -113,7 +113,7 @@ export default function Home() {
       <div className="flex jc-center font-orange-red">
         <h2 className="main-title font-kadoku font-60">Reddit Tracker</h2>
       </div>
-      <div className="top-container flex space-around">
+      <div className="top-container flex justify-around">
         <div className="info-container">
           <div className="font-mouldyCheese normal-font font-orange-red">
             <div>Today's Date:</div>
@@ -164,7 +164,7 @@ export default function Home() {
       {finData !== undefined && (
         <Table finData={finData} stockPrice={stockPrice} />
       )}
-      <div className="flex space-around bottom-text font-white">
+      <div className="flex justify-around bottom-text font-white">
         <div>
           <Link href="/terms-of-use">Terms Of Use</Link>
         </div>

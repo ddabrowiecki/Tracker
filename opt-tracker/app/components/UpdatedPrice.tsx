@@ -21,7 +21,7 @@ const theme = createTheme({
 
 const UpdatedPrice: FC<UpdatedPriceProps> = ({ recalculate, reset }) => {
   return (
-    <div className="updated-price flex space-between width-20 ai-center mt-5">
+    <div className="updated-price flex justify-between width-20 items-center mt-5">
       <Button onClick={recalculate} color="warning" variant="contained" size="small">Update Table</Button>
       <Button className="ml-5" onClick={reset} color="warning" variant="contained" size="small" >Reset Price</Button>
     </div>
