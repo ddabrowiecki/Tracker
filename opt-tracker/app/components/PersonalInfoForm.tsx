@@ -42,7 +42,7 @@ const PersonalInfoForm = ({
           </FormControl>
         </Box>
       </BoxWithLabelWrapper>
-      <div className="col-start-2 col-end-3"></div>
+      <div className="lg:col-start-2 lg:col-end-3"></div>
       <BoxWithLabelWrapper title="Estimated Income">
         <input
           className="mt-5"

@@ -83,7 +83,7 @@
 }
 
 table {
-  border-collapse: separate; 
+  border-collapse: separate;
   border-spacing: 0;
   padding: 5px;
   td,
@@ -419,5 +419,21 @@ label {
 
   .mobile-margin-top-spacing {
     margin-top: 10px;
+  }
+
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .background-form {
+    min-height: 100vh;
+    background:
+      url("../../opt-tracker/public/editedSnoo.png"), rgb(var(--foreground-rgb));
+    background-size: 100px, contain;
+    background-repeat: no-repeat;
+    background-position:
+      47% 33%,
+      40%;
+    overflow: scroll;
   }
 }

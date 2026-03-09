@@ -45,7 +45,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
   return (
     <div className="background-form p-[2%]">
       <div className="font-orange-red">
-        <div className="welcome-title flex jc-center font-kadoku font-60 mobile-text-center">
+        <div className="welcome-title flex justify-center font-kadoku font-60 mobile-text-center">
           <p>Welcome to Reddit Tracker!</p>
         </div>
         <div className="text-white flex justify-center items-center font-mouldyCheese info-request mobile-text-center">
@@ -63,7 +63,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-x-[5%] gap-y-[20%] mt-[5%]">
+      <div className={`grid lg:grid-cols-3 gap-x-[5%] gap-y-[2%] lg:gap-y-[20%] mt-[40%] lg:mt-[5%] mobile-grid`}>
         <PersonalInfoForm
           filingStatus={filingStatus}
           setFilingStatus={setFilingStatus}
@@ -89,7 +89,7 @@ const FinancialInfoModal: FC<ModalProps> = ({ closeModal }) => {
           nsoSharesToBuyPurchasePrice={nsoSharesToBuyPurchasePrice}
           setNsoSharesToBuyPurchasePrice={setNsoSharesToBuyPurchasePrice}
         />
-        <div className="col-start-3 col-end-4">
+        <div className="lg:col-start-3 lg:col-end-4">
           <div className="width-85 mobile-margin-top-spacing">
             <Button
               onClick={handleSubmitInfo}
