@@ -15,8 +15,10 @@ jobs:
 
       - name: Fetch prices
         env:
-          AV_KEY: ${{ secrets.AV_KEY }}
-        run: python scripts/fetch_rddt_prices.py | tee rddt_prices.csv
+          AV_KEY: ${{ secrets.AV_API_KEY }}
+        run: |
+          set -o pipefail
+          python scripts/fetch_rddt_prices.py | tee rddt_prices.csv
 
       - name: Save CSV output
         uses: actions/upload-artifact@v4
